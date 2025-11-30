@@ -53,6 +53,7 @@ export default function Sectors() {
                   src={sector.image}
                   alt={sector.title}
                   fill
+                  unoptimized
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {/* Dark Gradient Overlay */}
