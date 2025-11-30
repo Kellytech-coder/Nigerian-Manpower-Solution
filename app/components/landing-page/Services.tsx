@@ -8,19 +8,19 @@ export default function Services() {
       category: 'Skilled labor',
       title: 'Professional talent deployment',
       description: 'Precision-matched experts for complex industrial requirements',
-      image: '/images/PlaceholderImage3.png',
+      image: '/images/placeholderImage3.png',
     },
     {
       category: 'Temporary staffing',
       title: 'Flexible workforce',
       description: 'Rapid personnel allocation for short-term and dynamic project needs',
-      image: '/images/PlaceholderImage4.png',
+      image: '/images/placeholderImage4.png',
     },
     {
       category: 'Facility management',
       title: 'Comprehensive support',
       description: 'End-to-end workforce and operational management for enterprise environments',
-      image: '/images/PlaceholderImage5.png',
+      image: '/images/placeholderImage5.png',
     },
   ];
 

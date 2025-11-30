@@ -43,16 +43,16 @@ export default function Hero() {
           {/* Back Image — Big image */}
           <div className="absolute right-2 sm:right-6 top-0 w-[75%] sm:w-[65%] md:w-[60%] lg:w-[90%] xl:w-[65%] rounded-3xl overflow-hidden shadow-2xl z-10">
             <img
-              src="/images/PlaceholderImage2.png"
+              src="/images/placeholderImage2.png"
               alt="Male worker"
               className="w-full h-full object-cover"
             />
           </div>
 
           {/* Front Image — Smaller image */}
-          <div className="absolute left-2 sm:left-15 bottom-30 sm:bottom-10 lg:bottom-70 w-[45%] sm:w-[40%] md:w-[38%] lg:w-[45%] xl:w-[40%] rounded-3xl overflow-hidden shadow-xl z-20">
+          <div className="absolute left-2 sm:left-15 bottom-30 sm:bottom-10 lg:bottom-68 w-[45%] sm:w-[40%] md:w-[38%] lg:w-[45%] xl:w-[40%] rounded-3xl overflow-hidden shadow-xl z-20">
             <img
-              src="/images/PlaceholderImage1.png"
+              src="/images/placeholderImage1.png"
               alt="Female engineer"
               className="w-full h-full object-cover"
             />
