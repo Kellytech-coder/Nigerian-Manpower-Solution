@@ -65,6 +65,7 @@ export default function Process() {
                     src={step.image}
                     alt={step.title}
                     fill
+                    unoptimized
                     className="object-cover"
                   />
                 </div>
@@ -101,6 +102,7 @@ export default function Process() {
                 src="/images/mds5.png"
                 alt="Long-term workforce optimization"
                 fill
+                unoptimized
                 className="object-cover"
               />
             </div>
