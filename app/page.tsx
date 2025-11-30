@@ -5,7 +5,7 @@ import TrustBlock from "./components/landing-page/TrustBlock";
 import Sectors from "./components/landing-page/Sectors";
 import Process from "./components/landing-page/Process";
 import Testimonials from "./components/landing-page/Testimonials";
-import Logo from "./components/landing-page/Logo";
+// import Logo from "./components/landing-page/Logo";
 import WorkForceBenefits from "./components/landing-page/WorkForceBenefits";
 import Footer from "./components/landing-page/Footer";
 
@@ -19,7 +19,7 @@ export default function Home() {
       <Sectors />
       <Process />
       <Testimonials />
-      <Logo />
+      {/* <Logo /> */}
       <WorkForceBenefits />
       <Footer />
     </>
