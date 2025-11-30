@@ -8,28 +8,28 @@ export default function Process() {
       category: 'Request',
       title: 'Initial consultation',
       description: 'Understand your specific workforce requirements',
-      image: '/images/process-1.jpg',
+      image: '/images/mds1.png',
       link: 'Details',
     },
     {
       category: 'Assessment',
       title: 'Workforce profiling',
       description: 'Identify precise skill sets and industry-specific needs',
-      image: '/images/process-2.jpg',
+      image: '/images/mds2.png',
       link: 'Match',
     },
     {
       category: 'Candidate selection',
       title: 'Rigorous screening and skills verification',
       description: 'Precision matching of talent',
-      image: '/images/process-3.jpg',
+      image: '/images/mds3.png',
       link: 'Deploy',
     },
     {
       category: 'Workforce integration',
       title: 'Smooth onboarding and performance monitoring',
       description: 'Continuous support',
-      image: '/images/process-4.jpg',
+      image: '/images/mds4.png',
       link: 'Follow-up',
     },
   ];
@@ -98,7 +98,7 @@ export default function Process() {
             {/* Image Top */}
             <div className="relative h-64 lg:h-80">
               <Image
-                src="/images/process-5.jpg"
+                src="/images/mds5.png"
                 alt="Long-term workforce optimization"
                 fill
                 className="object-cover"

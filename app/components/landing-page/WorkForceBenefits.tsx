@@ -32,7 +32,7 @@ export default function CTA() {
           {/* Right Image */}
           <div className="relative h-[400px] lg:h-auto">
             <Image
-              src="/images/cta-worker.jpg"
+              src="/images/PlaceholderImage10.png"
               alt="Professional construction worker"
               fill
               className="object-cover"

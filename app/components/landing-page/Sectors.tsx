@@ -8,19 +8,19 @@ export default function Sectors() {
       category: 'Construction',
       title: 'Heavy-duty workforce for infrastructure development',
       description: 'Skilled technicians and project-specific personnel',
-      image: '/images/sector-1.jpg',
+      image: '/images/placeholderImage7.png',
     },
     {
       category: 'Oil & gas',
       title: 'Technical expertise for energy sector challenges',
       description: 'Specialized professionals meeting rigorous industry standards',
-      image: '/images/sector-2.jpg',
+      image: '/images/placeholderImage8.png',
     },
     {
       category: 'Manufacturing',
       title: 'Precision workforce for industrial production',
       description: 'Skilled operators ensuring operational excellence and efficiency',
-      image: '/images/sector-3.jpg',
+      image: '/images/placeholderImage9.png',
     },
   ];
 

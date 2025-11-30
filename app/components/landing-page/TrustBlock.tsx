@@ -29,7 +29,7 @@ export default function TrustBlock() {
           {/* Image Left */}
           <div className="relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-xl">
             <Image
-              src="/images/trust.jpg"
+              src="/images/PlaceholderImage6.png"
               alt="Trusted workforce professional"
               fill
               className="object-cover"
