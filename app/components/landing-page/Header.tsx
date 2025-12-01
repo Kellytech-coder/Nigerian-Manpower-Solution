@@ -132,13 +132,6 @@ export default function Header() {
               {isResourcesOpen && (
                 <div className="pl-4 mt-2 space-y-2">
                   <a
-                    href="#blog"
-                    onClick={closeMobileMenu}
-                    className="block text-gray-400 py-2 hover:text-amber-500 transition"
-                  >
-                    Blog
-                  </a>
-                  <a
                     href="#case-studies"
                     onClick={closeMobileMenu}
                     className="block text-gray-400 py-2 hover:text-amber-500 transition"
@@ -146,11 +139,18 @@ export default function Header() {
                     Case Studies
                   </a>
                   <a
-                    href="#guides"
+                    href="#work-force"
                     onClick={closeMobileMenu}
                     className="block text-gray-400 py-2 hover:text-amber-500 transition"
                   >
-                    Guides
+                    Work Force
+                  </a>
+                  <a
+                    href="#careers"
+                    onClick={closeMobileMenu}
+                    className="block text-gray-400 py-2 hover:text-amber-500 transition"
+                  >
+                    Careers
                   </a>
                 </div>
               )}
