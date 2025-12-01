@@ -53,8 +53,8 @@ export default function Header() {
               <a href="#work-force" className="block px-4 py-2 hover:bg-zinc-700">
                 workforce
               </a>
-              <a href="#career" className="block px-4 py-2 hover:bg-zinc-700 rounded-b-md">
-                Career
+              <a href="#careers" className="block px-4 py-2 hover:bg-zinc-700 rounded-b-md">
+                Careers
               </a>
             </div>
           </div>
