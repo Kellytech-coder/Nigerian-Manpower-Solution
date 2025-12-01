@@ -21,7 +21,7 @@ export default function Hero() {
             Our precision staffing transforms enterprise performance.
           </p>
 
-          <div className="mt-8 sm:mt-10 flex flex-wrap gap-4">
+          <div className="mt-8 sm:mt-10 flex gap-4">
             <a
               href="#request"
               className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
@@ -41,7 +41,7 @@ export default function Hero() {
         <div className="relative h-[380px] sm:h-[500px] md:h-[550px] lg:h-[700px] w-full">
 
           {/* Back Image — Big image */}
-          <div className="absolute right-2 sm:right-6 top-0 w-[75%] sm:w-[65%] md:w-[60%] lg:w-[90%] xl:w-[65%] rounded-3xl overflow-hidden shadow-2xl z-10">
+          <div className="absolute right-2 sm:right-6 top-0 w-[85%] sm:w-[75%] md:w-[70%] lg:w-[100%] xl:w-[75%] rounded-3xl overflow-hidden shadow-2xl z-10">
             <img
               src="/images/PlaceholderImage2.png"
               alt="Male worker"
@@ -50,7 +50,7 @@ export default function Hero() {
           </div>
 
           {/* Front Image — Smaller image */}
-          <div className="absolute left-2 sm:left-15 bottom-30 sm:bottom-10 lg:bottom-68 w-[45%] sm:w-[40%] md:w-[38%] lg:w-[45%] xl:w-[40%] rounded-3xl overflow-hidden shadow-xl z-20">
+         <div className="absolute left-2 sm:left-15 bottom-30 sm:bottom-10 lg:bottom-68 w-[38%] sm:w-[34%] md:w-[32%] lg:w-[38%] xl:w-[34%] rounded-3xl overflow-hidden shadow-xl z-20">
             <img
               src="/images/PlaceholderImage1.png"
               alt="Female engineer"
