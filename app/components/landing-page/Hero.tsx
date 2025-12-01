@@ -42,7 +42,7 @@ export default function Hero() {
         <div className="relative h-[380px] sm:h-[500px] md:h-[550px] lg:h-[700px] w-full">
 
           {/* Back Image — Big image */}
-          <div className="absolute right-2 sm:right-6 top-0 w-[85%] sm:w-[75%] md:w-[70%] lg:w-[100%] xl:w-[75%] rounded-3xl overflow-hidden shadow-2xl z-10">
+          <div className="absolute right-2 sm:right-6 top-0 w-[85%] sm:w-[75%] md:w-[70%] lg:w-[100%] xl:w-[75%] overflow-hidden shadow-2xl z-10">
             <img
               src="/images/PlaceholderImage2.png"
               alt="Male worker"
@@ -51,7 +51,7 @@ export default function Hero() {
           </div>
 
           {/* Front Image — Smaller image */}
-         <div className="absolute left-2 sm:left-10 bottom-20 sm:bottom-10 lg:bottom-59 w-[45%] sm:w-[40%] md:w-[40%] lg:w-[40%] xl:w-[40%] rounded-3xl overflow-hidden shadow-xl z-20">
+         <div className="absolute left-2 sm:left-10 bottom-20 sm:bottom-10 lg:bottom-59 w-[45%] sm:w-[40%] md:w-[40%] lg:w-[40%] xl:w-[40%] overflow-hidden shadow-xl z-20">
             <img
               src="/images/PlaceholderImage1.png"
               alt="Female engineer"
