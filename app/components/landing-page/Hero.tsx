@@ -22,19 +22,20 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 sm:mt-10 flex gap-4">
-            <a
-              href="#request"
-              className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
-            >
-              Request manpower
-            </a>
-            <a
-              href="#learn-more"
-              className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-white border-2 border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 transition"
-            >
-              Learn more
-            </a>
-          </div>
+  <a
+    href="#request"
+    className="inline-flex items-center px-2 sm:px-3 py-3 sm:py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
+  >
+    Request manpower
+  </a>
+
+  <a
+    href="#learn-more"
+    className="inline-flex items-center px-2 sm:px-3 py-3 sm:py-4 bg-white border text-gray-900 font-semibold rounded-full hover:bg-gray-50 transition"
+  >
+    Learn more
+  </a>
+</div>
         </div>
 
         {/* Right: Stacked Images */}
