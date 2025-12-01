@@ -18,7 +18,7 @@ export default function CTA() {
               </p>
 
               {/* CTA Buttons */}
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-10 flex  gap-4">
                 <button className="px-8 py-4 rounded-full bg-amber-500 text-white font-semibold text-base lg:text-lg hover:bg-amber-600 transition-colors duration-300 shadow-lg">
                   Request manpower
                 </button>

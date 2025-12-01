@@ -51,7 +51,7 @@ export default function Hero() {
           </div>
 
           {/* Front Image — Smaller image */}
-         <div className="absolute left-2 sm:left-15 bottom-30 sm:bottom-10 lg:bottom-68 w-[38%] sm:w-[34%] md:w-[32%] lg:w-[38%] xl:w-[34%] rounded-3xl overflow-hidden shadow-xl z-20">
+         <div className="absolute left-2 sm:left-10 bottom-20 sm:bottom-10 lg:bottom-59 w-[45%] sm:w-[40%] md:w-[40%] lg:w-[40%] xl:w-[40%] rounded-3xl overflow-hidden shadow-xl z-20">
             <img
               src="/images/PlaceholderImage1.png"
               alt="Female engineer"
