@@ -18,14 +18,21 @@ export default function CTA() {
               </p>
 
               {/* CTA Buttons */}
-              <div className="mt-10 flex  gap-4">
-                <button className="px-8 py-4 rounded-full bg-amber-500 text-white font-semibold text-base lg:text-lg hover:bg-amber-600 transition-colors duration-300 shadow-lg">
-                  Request manpower
-                </button>
-                <button className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base lg:text-lg hover:bg-white hover:text-slate-900 transition-all duration-300">
-                  Learn more
-                </button>
-              </div>
+              <div className="mt-8 sm:mt-10 flex gap-4">
+  <a
+    href="#request"
+    className="inline-flex items-center px-2 sm:px-3 py-3 sm:py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
+  >
+    Request manpower
+  </a>
+
+  <a
+    href="#learn-more"
+    className="inline-flex items-center px-2 sm:px-3 py-3 sm:py-4 bg-white border text-gray-900 font-semibold rounded-full hover:bg-gray-50 transition"
+  >
+    Learn more
+  </a>
+</div>
             </div>
           </div>
 
