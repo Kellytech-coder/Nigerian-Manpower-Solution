@@ -7,7 +7,7 @@ export default function Hero() {
 
         {/* Left: Text Content */}
         <div className="max-w-2xl px-4 sm:px-0">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-gray-900 leading-tight">
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black text-gray-900 leading-tight">
             Powering<br />
             Nigeria’s<br />
             businesses<br />
