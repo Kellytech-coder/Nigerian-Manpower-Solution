@@ -45,12 +45,16 @@ export default function Testimonials() {
     setCurrentSlide(index);
   };
 
-  // Calculate which testimonials to show (current and next 2)
-  const visibleTestimonials = [
-    testimonials[currentSlide],
-    testimonials[(currentSlide + 1) % testimonials.length],
-    testimonials[(currentSlide + 2) % testimonials.length],
-  ];
+  // MOBILE/TABLET: show only the active testimonial
+  // DESKTOP (lg): show active + next 2
+  const visibleTestimonials =
+    typeof window !== 'undefined' && window.innerWidth >= 1024
+      ? [
+          testimonials[currentSlide],
+          testimonials[(currentSlide + 1) % testimonials.length],
+          testimonials[(currentSlide + 2) % testimonials.length],
+        ]
+      : [testimonials[currentSlide]];
 
   return (
     <section id="testimonials" className="py-16 lg:py-24 bg-gray-50">
@@ -85,7 +89,7 @@ export default function Testimonials() {
           </button>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
             {visibleTestimonials.map((testimonial, idx) => (
               <article
                 key={`${currentSlide}-${idx}`}
