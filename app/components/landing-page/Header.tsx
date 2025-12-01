@@ -47,14 +47,14 @@ export default function Header() {
             </button>
             {/* Dropdown menu - you can add items here */}
             <div className="absolute top-full left-0 mt-2 w-48 bg-zinc-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <a href="#blog" className="block px-4 py-2 hover:bg-zinc-700 rounded-t-md">
-                Blog
-              </a>
-              <a href="#case-studies" className="block px-4 py-2 hover:bg-zinc-700">
+              <a href="#case-studies" className="block px-4 py-2 hover:bg-zinc-700 rounded-t-md">
                 Case Studies
               </a>
-              <a href="#guides" className="block px-4 py-2 hover:bg-zinc-700 rounded-b-md">
-                Guides
+              <a href="#work-force" className="block px-4 py-2 hover:bg-zinc-700">
+                workforce
+              </a>
+              <a href="#career" className="block px-4 py-2 hover:bg-zinc-700 rounded-b-md">
+                Career
               </a>
             </div>
           </div>
