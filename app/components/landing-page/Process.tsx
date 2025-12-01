@@ -120,16 +120,21 @@ export default function Process() {
               </p>
 
               <div className="mt-4 sm:mt-8 flex flex-wrap gap-3 sm:gap-4">
-                <button className="px-6 sm:px-8 py-2 sm:py-3 rounded-full bg-amber-500 text-white font-semibold hover:bg-amber-600 transition-colors duration-300">
+                <button className="px-6 sm:px-8 py-2 sm:py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-600 transition-colors duration-300">
                   Request
                 </button>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-1 sm:gap-2 px-6 sm:px-8 py-2 sm:py-3 font-semibold text-gray-900 hover:gap-3 transition-all duration-300"
-                >
-                  Consult
-                  <span className="text-base sm:text-lg">→</span>
-                </a>
+               <a
+  href="#"
+  className="inline-flex items-center gap-1 sm:gap-2 px-6 sm:px-8 py-2 sm:py-3 
+  font-semibold text-gray-900 
+  border 
+  rounded-xl"
+>
+  Consult
+ <span className="text-base gap-1 sm:gap-3 sm:text-lg">&gt;</span>
+
+</a>
+
               </div>
             </div>
           </div>
