@@ -1,6 +1,7 @@
 // app/components/landing-page/Process.tsx
 import Image from 'next/image';
 import Container from './Container';
+import FadeInWrapper from './FadeInOnScroll';
 
 export default function Process() {
   const steps = [
@@ -38,7 +39,7 @@ export default function Process() {
     <section id="process" className="py-12 sm:py-16 lg:py-24 bg-white">
       <Container>
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 lg:mb-16 px-4">
+        <FadeInWrapper className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 lg:mb-16 px-4">
           <p className="text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-widest">
             Process
           </p>
@@ -48,17 +49,14 @@ export default function Process() {
           <p className="mt-2 sm:mt-4 text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Seamless workforce solutions from initial contact to final placement
           </p>
-        </div>
+        </FadeInWrapper>
 
         {/* Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
           {/* Left Side - 2x2 Grid of Small Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {steps.map((step, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-2xl shadow-md sm:shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300"
-              >
+              <FadeInWrapper key={idx} className="bg-white rounded-2xl shadow-md sm:shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300">
                 {/* Image Top */}
                 <div className="relative h-40 sm:h-44 md:h-48">
                   <Image
@@ -90,12 +88,12 @@ export default function Process() {
                     <span className="text-base sm:text-lg">→</span>
                   </a>
                 </div>
-              </div>
+              </FadeInWrapper>
             ))}
           </div>
 
           {/* Right Side - Large Featured Card */}
-          <div className="bg-white rounded-2xl shadow-md sm:shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300 mt-6 lg:mt-0">
+          <FadeInWrapper className="bg-white rounded-2xl shadow-md sm:shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300 mt-6 lg:mt-0">
             {/* Image Top */}
             <div className="relative h-56 sm:h-64 lg:h-80">
               <Image
@@ -124,20 +122,18 @@ export default function Process() {
                   Request
                 </button>
                <a
-  href="#"
-  className="inline-flex items-center gap-1 sm:gap-2 px-6 sm:px-8 py-2 sm:py-3 
-  font-semibold text-gray-900 
-  border 
-  rounded-xl"
->
-  Consult
- <span className="text-base gap-1 sm:gap-3 sm:text-lg">&gt;</span>
-
-</a>
-
+                  href="#"
+                  className="inline-flex items-center gap-1 sm:gap-2 px-6 sm:px-8 py-2 sm:py-3 
+                  font-semibold text-gray-900 
+                  border 
+                  rounded-xl"
+                >
+                  Consult
+                  <span className="text-base gap-1 sm:gap-3 sm:text-lg">&gt;</span>
+                </a>
               </div>
             </div>
-          </div>
+          </FadeInWrapper>
         </div>
       </Container>
     </section>

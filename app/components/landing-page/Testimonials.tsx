@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import Container from './Container';
+import FadeInWrapper from './FadeInOnScroll';
 
 export default function Testimonials() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -45,8 +46,6 @@ export default function Testimonials() {
     setCurrentSlide(index);
   };
 
-  // MOBILE/TABLET: show only the active testimonial
-  // DESKTOP (lg): show active + next 2
   const visibleTestimonials =
     typeof window !== 'undefined' && window.innerWidth >= 1024
       ? [
@@ -60,38 +59,42 @@ export default function Testimonials() {
     <section id="testimonials" className="py-16 lg:py-24 bg-gray-50">
       <Container>
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16 px-4">
+        <FadeInWrapper className="text-center max-w-3xl mx-auto mb-12 lg:mb-16 px-4">
           <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
             Client success stories
           </h2>
           <p className="mt-4 text-lg text-gray-600">
             Real impact from our precision workforce solutions
           </p>
-        </div>
+        </FadeInWrapper>
 
         {/* Testimonials Carousel */}
         <div className="relative">
           {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-10 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft className="w-6 h-6 text-gray-900" />
-          </button>
+          <FadeInWrapper className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-10 w-12 h-12">
+            <button
+              onClick={prevSlide}
+              className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="w-6 h-6 text-gray-900" />
+            </button>
+          </FadeInWrapper>
 
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-10 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight className="w-6 h-6 text-gray-900" />
-          </button>
+          <FadeInWrapper className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-10 w-12 h-12">
+            <button
+              onClick={nextSlide}
+              className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="w-6 h-6 text-gray-900" />
+            </button>
+          </FadeInWrapper>
 
           {/* Cards Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
             {visibleTestimonials.map((testimonial, idx) => (
-              <article
+              <FadeInWrapper
                 key={`${currentSlide}-${idx}`}
                 className="bg-white rounded-2xl shadow-lg p-8 flex flex-col hover:shadow-xl transition-shadow duration-300"
               >
@@ -121,20 +124,16 @@ export default function Testimonials() {
                     />
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900">
-                      {testimonial.author}
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      {testimonial.role}
-                    </p>
+                    <p className="font-bold text-gray-900">{testimonial.author}</p>
+                    <p className="text-sm text-gray-600">{testimonial.role}</p>
                   </div>
                 </div>
-              </article>
+              </FadeInWrapper>
             ))}
           </div>
 
           {/* Dots Navigation */}
-          <div className="flex justify-center gap-2 mt-12">
+          <FadeInWrapper className="flex justify-center gap-2 mt-12">
             {testimonials.map((_, idx) => (
               <button
                 key={idx}
@@ -147,7 +146,7 @@ export default function Testimonials() {
                 aria-label={`Go to testimonial ${idx + 1}`}
               />
             ))}
-          </div>
+          </FadeInWrapper>
         </div>
       </Container>
     </section>

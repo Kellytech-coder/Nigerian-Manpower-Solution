@@ -1,6 +1,7 @@
 // app/components/landing-page/Sectors.tsx
 import Image from 'next/image';
 import Container from './Container';
+import FadeInWrapper from './FadeInOnScroll';
 
 export default function Sectors() {
   const sectors = [
@@ -28,7 +29,7 @@ export default function Sectors() {
     <section id="sectors" className="bg-slate-900 py-12 sm:py-16 lg:py-24">
       <Container>
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-12 lg:mb-16 px-4">
+        <FadeInWrapper className="text-center max-w-4xl mx-auto mb-10 sm:mb-12 lg:mb-16 px-4">
           <p className="text-xs sm:text-sm font-medium text-slate-400 uppercase tracking-widest">
             Industries
           </p>
@@ -38,12 +39,12 @@ export default function Sectors() {
           <p className="mt-2 sm:mt-4 text-sm sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Specialized manpower solutions for complex industrial environments
           </p>
-        </div>
+        </FadeInWrapper>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {sectors.map((sector, idx) => (
-            <article
+            <FadeInWrapper
               key={idx}
               className="relative overflow-hidden rounded-2xl sm:rounded-3xl group cursor-pointer h-[420px] sm:h-[480px] lg:h-[550px]"
             >
@@ -57,7 +58,7 @@ export default function Sectors() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent"></div>
               </div>
 
               {/* Content */}
@@ -81,7 +82,7 @@ export default function Sectors() {
                   <span className="text-base sm:text-lg">→</span>
                 </a>
               </div>
-            </article>
+            </FadeInWrapper>
           ))}
         </div>
       </Container>

@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 import Container from './Container';
+import FadeInWrapper from './FadeInOnScroll';
 
 export default function Footer() {
   const navigationLinks = [
@@ -36,10 +37,10 @@ export default function Footer() {
     <footer className="bg-zinc-900 text-white">
       <Container>
         {/* Main Footer Content */}
-        <div className="py-12 md:py-16 lg:py-20 px-4">
+        <FadeInWrapper className="py-12 md:py-16 lg:py-20 px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-8">
             {/* Company Info */}
-            <div className="sm:col-span-2 lg:col-span-1">
+            <FadeInWrapper className="sm:col-span-2 lg:col-span-1">
               {/* Logo */}
               <div className="mb-6 md:mb-8">
                 <h3 className="text-xl md:text-2xl font-bold italic">Logo</h3>
@@ -47,7 +48,9 @@ export default function Footer() {
 
               {/* Address */}
               <div className="mb-5 md:mb-6">
-                <h4 className="text-xs md:text-sm font-bold text-white mb-2 md:mb-3">Address</h4>
+                <h4 className="text-xs md:text-sm font-bold text-white mb-2 md:mb-3">
+                  Address
+                </h4>
                 <p className="text-gray-400 text-sm md:text-base leading-relaxed">
                   12 Marina Street, Victoria Island, Lagos, Nigeria
                 </p>
@@ -55,7 +58,9 @@ export default function Footer() {
 
               {/* Contact */}
               <div className="mb-6 md:mb-8">
-                <h4 className="text-xs md:text-sm font-bold text-white mb-2 md:mb-3">Contact</h4>
+                <h4 className="text-xs md:text-sm font-bold text-white mb-2 md:mb-3">
+                  Contact
+                </h4>
                 <div className="space-y-2">
                   <a
                     href="tel:+2340123456789"
@@ -88,10 +93,10 @@ export default function Footer() {
                   );
                 })}
               </div>
-            </div>
+            </FadeInWrapper>
 
             {/* Navigation Links */}
-            <div>
+            <FadeInWrapper>
               <nav className="space-y-3 md:space-y-4">
                 {navigationLinks.map((link) => (
                   <Link
@@ -103,11 +108,13 @@ export default function Footer() {
                   </Link>
                 ))}
               </nav>
-            </div>
+            </FadeInWrapper>
 
             {/* Quick Links */}
-            <div>
-              <h4 className="text-white font-bold mb-4 md:mb-6 text-sm md:text-base">Quick links</h4>
+            <FadeInWrapper>
+              <h4 className="text-white font-bold mb-4 md:mb-6 text-sm md:text-base">
+                Quick links
+              </h4>
               <nav className="space-y-3 md:space-y-4">
                 {quickLinks.map((link) => (
                   <Link
@@ -119,15 +126,15 @@ export default function Footer() {
                   </Link>
                 ))}
               </nav>
-            </div>
+            </FadeInWrapper>
 
             {/* Empty column for spacing on desktop only */}
             <div className="hidden lg:block"></div>
           </div>
-        </div>
+        </FadeInWrapper>
 
         {/* Bottom Bar */}
-        <div className="border-t border-zinc-800 py-5 md:py-6 px-4">
+        <FadeInWrapper className="border-t border-zinc-800 py-5 md:py-6 px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
             {/* Copyright */}
             <p className="text-gray-400 text-xs md:text-sm text-center md:text-left">
@@ -147,7 +154,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
-        </div>
+        </FadeInWrapper>
       </Container>
     </footer>
   );

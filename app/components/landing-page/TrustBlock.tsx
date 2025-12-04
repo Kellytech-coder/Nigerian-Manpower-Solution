@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { Users, ArrowRightLeft, ShieldCheck } from 'lucide-react';
 import Container from './Container';
+import FadeInWrapper from './FadeInOnScroll';
 
 export default function TrustBlock() {
   const features = [
@@ -26,8 +27,9 @@ export default function TrustBlock() {
     <section className="bg-amber-50 py-16 lg:py-24">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
           {/* Image Left */}
-          <div className="relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-xl">
+          <FadeInWrapper className="relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-xl">
             <Image
               src="/images/PlaceholderImage6.png"
               alt="Trusted workforce professional"
@@ -35,14 +37,14 @@ export default function TrustBlock() {
               className="object-cover"
               priority
             />
-          </div>
+          </FadeInWrapper>
 
           {/* Content Right */}
           <div className="space-y-8">
             {features.map((feature, idx) => {
               const Icon = feature.icon;
               return (
-                <div key={idx} className="flex gap-5">
+                <FadeInWrapper key={idx} className="flex gap-5">
                   {/* Icon */}
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-lg bg-amber-500 flex items-center justify-center">
@@ -59,23 +61,25 @@ export default function TrustBlock() {
                       {feature.description}
                     </p>
                   </div>
-                </div>
+                </FadeInWrapper>
               );
             })}
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 pt-4">
-              <button className="px-8 py-3 rounded-full border-2 border-gray-900 text-gray-900 font-semibold hover:bg-gray-900 hover:text-white transition-colors duration-300">
-                Learn more
-              </button>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-8 py-3 font-semibold text-gray-900 hover:gap-4 transition-all duration-300"
-              >
-                Contact
-                <span className="text-xl">→</span>
-              </a>
-            </div>
+            <FadeInWrapper>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <button className="px-8 py-3 rounded-full border-2 border-gray-900 text-gray-900 font-semibold hover:bg-gray-900 hover:text-white transition-colors duration-300">
+                  Learn more
+                </button>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-8 py-3 font-semibold text-gray-900 hover:gap-4 transition-all duration-300"
+                >
+                  Contact
+                  <span className="text-xl">→</span>
+                </a>
+              </div>
+            </FadeInWrapper>
           </div>
         </div>
       </Container>
