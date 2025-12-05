@@ -13,18 +13,19 @@ const Footer: React.FC = () => {
           <p className="text-sm mb-1">+234 (0) 123 456 7890</p>
           <p className="text-sm">info@nigerianmanpower.com</p>
           <div className="flex gap-4 mt-4">
-            <a href="#" aria-label="Facebook">
-              <img src="/icons/facebook.svg" alt="Facebook" className="w-6 h-6 sm:w-5 sm:h-5" />
-            </a>
-            <a href="#" aria-label="Instagram">
-              <img src="/images/instagram.png" alt="Instagram" className="w-6 h-6 sm:w-5 sm:h-5" />
+            <a href="#" aria-label="LinkedIn">
+              <img src="/images/linkedin.png" alt="LinkedIn" className="w-6 h-6 sm:w-5 sm:h-5" />
             </a>
             <a href="#" aria-label="Twitter">
               <img src="/images/twitter.png" alt="Twitter" className="w-6 h-6 sm:w-5 sm:h-5" />
             </a>
-            <a href="#" aria-label="LinkedIn">
-              <img src="/images/linkedin.png" alt="LinkedIn" className="w-6 h-6 sm:w-5 sm:h-5" />
+             <a href="#" aria-label="Instagram">
+              <img src="/images/instagram.png" alt="Instagram" className="w-6 h-6 sm:w-5 sm:h-5" />
             </a>
+            <a href="#" aria-label="Facebook">
+              <img src="/images/facebook.png" alt="Facebook" className="w-6 h-6 sm:w-5 sm:h-5" />
+            </a>
+            
           </div>
         </div>
 
