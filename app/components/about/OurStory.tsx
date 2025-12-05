@@ -37,16 +37,18 @@ export default function AboutSection() {
       description:
         "We combine industry expertise, technology, and a human-focused approach...",
       features: [
-        { image: "/images/about-hero2.png", title: "Reliable Workforce Supply", description: "Fast, verified, and ready-to-work talent." },
-        { image: "/images/about-feature1.png", title: "Flexible Staffing Models", description: "Permanent, temporary, and contract hiring." },
-        { image: "/images/about-feature2.png", title: "Industry Expertise", description: "Deep knowledge across multiple sectors." },
-        { image: "/images/about-feature3.png", title: "Quality Assurance", description: "Strict screening and compliance checks." },
+        { image: "/images/about-ourstory1.png", title: "Reliable Workforce Supply", description: "Fast, verified, and ready-to-work talent." },
+        { image: "/images/about-ourstory2.png", title: "Flexible Staffing Models", description: "Permanent, temporary, and contract hiring." },
+        { image: "/images/about-ourstory3.png", title: "Industry Expertise", description: "Deep knowledge across multiple sectors." },
+        { image: "/images/about-ourstory4.png", title: "Quality Assurance", description: "Strict screening and compliance checks." },
       ],
     },
   ];
 
-  const handlePrev = () => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  const handleNext = () => setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  const handlePrev = () =>
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  const handleNext = () =>
+    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
 
   const renderIcon = (iconType: string): React.ReactNode => {
     const icons: Record<string, React.ReactNode> = {
@@ -72,15 +74,11 @@ export default function AboutSection() {
               <p className="text-xs sm:text-sm uppercase text-gray-300 mb-2 sm:mb-4 tracking-wider">Our Story</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8">{currentSlideData.title}</h2>
               <p className="text-sm sm:text-base md:text-lg text-gray-200 mb-6 sm:mb-8 leading-relaxed">{currentSlideData.description}</p>
-
-              <div className="flex gap-2 sm:gap-3">
-                <button onClick={handlePrev} className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-800 border border-slate-700 rounded-md flex items-center justify-center hover:bg-slate-700 transition-colors text-white text-lg sm:text-2xl">‹</button>
-                <button onClick={handleNext} className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-500 rounded-md flex items-center justify-center hover:bg-orange-600 transition-colors text-white text-lg sm:text-2xl">›</button>
-              </div>
             </div>
 
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src={currentSlideData.image} alt={currentSlideData.title} className="w-full h-64 sm:h-96 md:h-[500px] lg:h-[600px] object-cover" />
+              <img src={currentSlideData.image} alt={currentSlideData.title}
+                   className="w-full h-64 sm:h-96 md:h-[500px] lg:h-[600px] object-cover" />
             </div>
           </div>
         )}
@@ -96,11 +94,6 @@ export default function AboutSection() {
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">{currentSlideData.leftTitle2}</h2>
               <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-6 sm:mb-8">{currentSlideData.leftDescription2}</p>
-
-              <div className="flex gap-2 sm:gap-3">
-                <button onClick={handlePrev} className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-800 border border-slate-700 rounded-md flex items-center justify-center hover:bg-slate-700 transition-colors text-white text-lg sm:text-2xl">‹</button>
-                <button onClick={handleNext} className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-500 rounded-md flex items-center justify-center hover:bg-orange-600 transition-colors text-white text-lg sm:text-2xl">›</button>
-              </div>
             </div>
 
             <div>
@@ -139,13 +132,39 @@ export default function AboutSection() {
                 </div>
               ))}
             </div>
-
-            <div className="flex gap-2 sm:gap-3">
-              <button onClick={handlePrev} className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-500 rounded-md flex items-center justify-center hover:bg-orange-600 transition-colors text-white text-lg sm:text-2xl">‹</button>
-              <button onClick={handleNext} className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-800 border border-slate-700 rounded-md flex items-center justify-center hover:bg-slate-700 transition-colors text-white text-lg sm:text-2xl">›</button>
-            </div>
           </div>
         )}
+
+       {/* GLOBAL NAVIGATION BUTTONS (bottom) */}
+<div className="flex justify-start mt-10 gap-3">
+
+  {/* PREV BUTTON */}
+  <button
+    onClick={handlePrev}
+    className={`
+      w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center transition-colors text-xl sm:text-2xl
+      ${currentSlide === 0 ? "bg-slate-700 text-gray-400" : ""} 
+      ${currentSlide === 1 ? "bg-slate-800 text-white" : ""} 
+      ${currentSlide === 2 ? "bg-orange-500 text-white hover:bg-orange-600" : ""} 
+    `}
+  >
+    ‹
+  </button>
+
+  {/* NEXT BUTTON */}
+  <button
+    onClick={handleNext}
+    className={`
+      w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center transition-colors text-xl sm:text-2xl
+      ${currentSlide === 0 ? "bg-orange-500 text-white hover:bg-orange-600" : ""} 
+      ${currentSlide === 1 ? "bg-orange-500 text-white hover:bg-orange-600" : ""} 
+      ${currentSlide === 2 ? "bg-slate-700 text-gray-400" : ""} 
+    `}
+  >
+    ›
+  </button>
+
+</div>
 
       </div>
     </section>

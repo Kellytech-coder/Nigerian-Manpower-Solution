@@ -5,25 +5,25 @@ const processSteps = [
     title: 'Understanding Your Needs',
     description: 'We analyze your manpower requirements and job specifications.',
     imageAlt: 'Discussion between two professionals',
-    imageSrc: '/images/understanding-needs.png',
+    imageSrc: '/images/about-ourprocess1.png',
   },
   {
     title: 'Candidate Sourcing & Screening',
     description: 'We search, verify, and shortlist the most qualified candidates.',
     imageAlt: 'Video interview on laptop',
-    imageSrc: '/images/sourcing-screening.png',
+    imageSrc: '/images/about-ourprocess2.png',
   },
   {
     title: 'Matching & Deployment',
     description: 'We align the right talent to your business needs.',
     imageAlt: 'Professional conversation',
-    imageSrc: '/images/matching-deployment.png',
+    imageSrc: '/images/about-ourprocess3.png',
   },
   {
     title: 'Continuous Support',
     description: 'We provide post-deployment monitoring and workforce management.',
     imageAlt: 'Handshake in business setting',
-    imageSrc: '/images/continuous-support.png',
+    imageSrc: '/images/about-ourprocess4.png',
   },
 ];
 

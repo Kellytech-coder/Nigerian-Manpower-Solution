@@ -5,14 +5,14 @@ const leaders = [
     name: 'Awa Kelechi',
     title: 'Founder & Lead Software Engineer',
     description: 'Driving operational excellence and workforce innovation.',
-    imageSrc: '/images/awa-kelechi.jpg',
+    imageSrc: '/images/teams1.png',
     socials: { linkedin: '#', twitter: '#', instagram: '#' },
   },
   {
     name: 'Nku Victor',
     title: 'Founder & Chief Product Designer',
     description: 'Empowering teams and strengthening businesses growth.',
-    imageSrc: '/images/nku-victor.jpg',
+    imageSrc: '/images/teams2.png',
     socials: { linkedin: '#', twitter: '#', instagram: '#' },
   },
 ];
@@ -39,13 +39,13 @@ const LeadershipTeam: React.FC = () => {
             {/* Social media icons */}
             <div className="flex justify-center gap-3 sm:gap-4">
               <a href={leader.socials.linkedin} aria-label="LinkedIn">
-                <img src="/icons/linkedin.svg" alt="LinkedIn" className="w-4 sm:w-5 h-4 sm:h-5" />
+                <img src="/images/linkedin.png" alt="LinkedIn" className="w-4 sm:w-5 h-4 sm:h-5" />
               </a>
               <a href={leader.socials.twitter} aria-label="Twitter">
-                <img src="/icons/twitter.svg" alt="Twitter" className="w-4 sm:w-5 h-4 sm:h-5" />
+                <img src="/images/twitter.png" alt="Twitter" className="w-4 sm:w-5 h-4 sm:h-5" />
               </a>
               <a href={leader.socials.instagram} aria-label="Instagram">
-                <img src="/icons/instagram.svg" alt="Instagram" className="w-4 sm:w-5 h-4 sm:h-5" />
+                <img src="/images/instagram.png" alt="Instagram" className="w-4 sm:w-5 h-4 sm:h-5" />
               </a>
             </div>
           </div>
