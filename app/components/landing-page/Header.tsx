@@ -3,6 +3,7 @@
 
 import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import Link from "next/link";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -35,9 +36,14 @@ export default function Header() {
           <a href="#industries" className="hover:text-gray-300 transition">
             Industries
           </a>
-          <a href="../about" className="hover:text-gray-300 transition">
-            About
-          </a>
+          <Link
+  href="/about"
+  onClick={closeMobileMenu}
+  className="text-white py-2 hover:text-grey-500 transition"
+>
+  About
+</Link>
+
 
           {/* Resources dropdown */}
           <div className="relative group">
