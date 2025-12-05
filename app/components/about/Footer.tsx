@@ -17,13 +17,13 @@ const Footer: React.FC = () => {
               <img src="/icons/facebook.svg" alt="Facebook" className="w-6 h-6 sm:w-5 sm:h-5" />
             </a>
             <a href="#" aria-label="Instagram">
-              <img src="/icons/instagram.svg" alt="Instagram" className="w-6 h-6 sm:w-5 sm:h-5" />
+              <img src="/images/instagram.png" alt="Instagram" className="w-6 h-6 sm:w-5 sm:h-5" />
             </a>
             <a href="#" aria-label="Twitter">
-              <img src="/icons/twitter.svg" alt="Twitter" className="w-6 h-6 sm:w-5 sm:h-5" />
+              <img src="/images/twitter.png" alt="Twitter" className="w-6 h-6 sm:w-5 sm:h-5" />
             </a>
             <a href="#" aria-label="LinkedIn">
-              <img src="/icons/linkedin.svg" alt="LinkedIn" className="w-6 h-6 sm:w-5 sm:h-5" />
+              <img src="/images/linkedin.png" alt="LinkedIn" className="w-6 h-6 sm:w-5 sm:h-5" />
             </a>
           </div>
         </div>
