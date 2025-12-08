@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center px-4 sm:px-6 md:px-8">
+    <section className="relative min-h-screen w-full flex items-center justify-center px-4 sm:px-9 md:px-8">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -17,8 +17,8 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative text-center max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl">
-        <h1 className="text-white font-bold leading-snug text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+      <div className="relative text-center max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-5xl">
+        <h1 className="text-white font-bold leading-snug text-2xl sm:text-3xl md:text-20xl lg:text-5xl">
           Empowering <br /> Businesses with <br /> Strategic Manpower <br /> Solutions
         </h1>
 
