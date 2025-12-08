@@ -6,11 +6,11 @@ const leaders = [
     title: 'Founder & Lead Software Engineer',
     description: 'Driving operational excellence and workforce innovation.',
     imageSrc: '/images/teams1.png',
-    socials: { linkedin: '#', twitter: '#', instagram: '#' },
+    socials: { linkedin: 'https://www.linkedin.com/in/kelechi-awa-8a0a63256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', twitter: 'https://x.com/KelechiAwa4?t=WSYQsE5uc0bhqcduMqufZQ&s=09', instagram: 'https://www.instagram.com/awa_bryan?igsh=Y2hleDllc2Zqc2lh' },
   },
   {
     name: 'Nku Victor',
-    title: 'Founder & Chief Product Designer',
+    title: 'Co-Founder & Chief Product Designer',
     description: 'Empowering teams and strengthening businesses growth.',
     imageSrc: '/images/teams2.png',
     socials: { linkedin: '#', twitter: '#', instagram: '#' },

@@ -25,7 +25,7 @@ export default function Hero() {
           <div className="mt-8 sm:mt-10 flex gap-4">
             <a
               href="#request"
-              className="inline-flex items-center px-2 sm:px-3 py-3 sm:py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
+              className="inline-flex items-center px-2 sm:px-3 py-3 sm:py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-full shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
             >
               Request manpower
             </a>
