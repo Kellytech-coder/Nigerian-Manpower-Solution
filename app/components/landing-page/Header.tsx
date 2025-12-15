@@ -60,7 +60,7 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-zinc-900 border-t border-zinc-800">
           <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
-            <a href="#services" onClick={closeMobileMenu} className="text-white py-2 hover:text-amber-500 transition">Services</a>
+            <a href="/services" onClick={closeMobileMenu} className="text-white py-2 hover:text-amber-500 transition">Services</a>
             <a href="#industries" onClick={closeMobileMenu} className="text-white py-2 hover:text-amber-500 transition">Industries</a>
             <Link href="/about" onClick={closeMobileMenu} className="text-white py-2 hover:text-amber-500 transition">About</Link>
 
