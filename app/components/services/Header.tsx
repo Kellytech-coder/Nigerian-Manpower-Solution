@@ -40,7 +40,7 @@ export default function Header() {
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/request-manpower"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md font-medium transition"
+            className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-md font-medium transition"
           >
             Request Manpower
           </Link>

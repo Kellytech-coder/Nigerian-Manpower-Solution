@@ -24,7 +24,7 @@ const HeroSection = () => {
             {/* Primary Button (Orange) */}
             <a
               href="#" // Replace with actual link
-              className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg shadow-lg transition duration-300 text-center"
+              className="px-8 py-3 bg-amber-500 hover:bg-amber-700 text-white font-semibold rounded-lg shadow-lg transition duration-300 text-center"
             >
               Request manpower
             </a>

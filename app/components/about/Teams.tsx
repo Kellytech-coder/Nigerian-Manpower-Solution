@@ -58,7 +58,7 @@ const LeadershipTeam: React.FC = () => {
         <p className="text-xs sm:text-sm text-gray-600 mb-4">
           Join our team and help us shape the future of workforce solutions.
         </p>
-        <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-5 rounded-full transition duration-300">
+        <button className="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-5 rounded-full transition duration-300">
           Open positions
         </button>
       </div>

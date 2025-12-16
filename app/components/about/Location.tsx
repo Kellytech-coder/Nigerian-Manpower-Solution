@@ -26,7 +26,7 @@ const LocationSection = () => {
 
           {/* Location Details */}
           <div className="lg:pr-12">
-            <div className="border-l-4 border-orange-600 pl-4">
+            <div className="border-l-4 border-amber-600 pl-4">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 Sydney
               </h3>
@@ -37,7 +37,7 @@ const LocationSection = () => {
                 href={mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium transition"
+                className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium transition"
               >
                 View Map →
               </a>
@@ -51,7 +51,7 @@ const LocationSection = () => {
             rel="noopener noreferrer"
             className="block w-full h-80 bg-gray-200 rounded-lg
                        flex items-center justify-center
-                       hover:opacity-90 hover:ring-2 hover:ring-orange-500
+                       hover:opacity-90 hover:ring-2 hover:ring-amber-500
                        transition cursor-pointer"
             aria-label="Open map location"
           >

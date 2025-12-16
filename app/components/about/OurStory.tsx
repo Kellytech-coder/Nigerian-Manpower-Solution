@@ -102,7 +102,7 @@ export default function AboutSection() {
               <div className="space-y-4 sm:space-y-6">
                 {currentSlideData.values?.map((v, i) => (
                   <div key={i} className="flex flex-col sm:flex-row gap-3 sm:gap-5 items-start">
-                    <div className="text-orange-500 flex-shrink-0 mt-1">{renderIcon(v.icon)}</div>
+                    <div className="text-amber-500 flex-shrink-0 mt-1">{renderIcon(v.icon)}</div>
                     <div>
                       <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1">{v.title}</h3>
                       <p className="text-gray-300 text-sm sm:text-base">{v.description}</p>
@@ -145,7 +145,7 @@ export default function AboutSection() {
       w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center transition-colors text-xl sm:text-2xl
       ${currentSlide === 0 ? "bg-slate-700 text-gray-400" : ""} 
       ${currentSlide === 1 ? "bg-slate-800 text-white" : ""} 
-      ${currentSlide === 2 ? "bg-orange-500 text-white hover:bg-orange-600" : ""} 
+      ${currentSlide === 2 ? "bg-amber-500 text-white hover:bg-amber-600" : ""} 
     `}
   >
     ‹
@@ -156,8 +156,8 @@ export default function AboutSection() {
     onClick={handleNext}
     className={`
       w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center transition-colors text-xl sm:text-2xl
-      ${currentSlide === 0 ? "bg-orange-500 text-white hover:bg-orange-600" : ""} 
-      ${currentSlide === 1 ? "bg-orange-500 text-white hover:bg-orange-600" : ""} 
+      ${currentSlide === 0 ? "bg-amber-500 text-white hover:bg-amber-600" : ""} 
+      ${currentSlide === 1 ? "bg-amber-500 text-white hover:bg-amber-600" : ""} 
       ${currentSlide === 2 ? "bg-slate-700 text-gray-400" : ""} 
     `}
   >

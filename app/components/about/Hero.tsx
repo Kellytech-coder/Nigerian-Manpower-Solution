@@ -42,7 +42,7 @@ export default function HeroSection() {
                         w-full max-w-lg mx-auto">
           <Link href="/landing-page" className="w-full sm:w-auto">
             <button className="w-full sm:w-auto
-                               bg-[#FF6A00] hover:bg-[#e65c00]
+                               bg-[#FF8C00] hover:bg-[#e65c00]
                                text-white px-8 py-4
                                rounded-md font-semibold
                                text-lg transition">

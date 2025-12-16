@@ -55,7 +55,7 @@ const OurProcess: React.FC = () => {
 
       {/* Button */}
       <div className="mt-10 text-center sm:text-left">
-        <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300">
+        <button className="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300">
           See Full How It Works
         </button>
       </div>

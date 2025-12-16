@@ -20,7 +20,7 @@ export default function WorkforcePromo() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 px-7 rounded-full transition-all">
+            <button className="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2.5 px-7 rounded-full transition-all">
               Request manpower
             </button>
 

@@ -95,7 +95,7 @@ export default function Navbar() {
           <div className="hidden md:flex">
             <Link
               href="/contact"
-              className="bg-[#FF6A00] hover:bg-[#e65d00] text-white px-4 sm:px-6 py-2 rounded-md text-sm lg:text-base font-medium"
+              className="bg-[#FF8C00] hover:bg-[#e65d00] text-white px-4 sm:px-6 py-2 rounded-md text-sm lg:text-base font-medium"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
               Contact Us

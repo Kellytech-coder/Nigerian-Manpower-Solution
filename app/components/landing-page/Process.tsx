@@ -129,7 +129,7 @@ export default function Process() {
                   rounded-xl"
                 >
                   Consult
-                  <span className="text-base gap-1 sm:gap-3 sm:text-lg">&gt;</span>
+                  <span className="text-base gap-1 sm:gap-3 sm:text-lg">→</span>
                 </a>
               </div>
             </div>
