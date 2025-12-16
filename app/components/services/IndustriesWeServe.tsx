@@ -30,7 +30,8 @@ export default function IndustriesWeServe() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20">
 
         {/* LEFT COLUMN */}
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col h-full">
+          {/* Text at top */}
           <div>
             <p className="text-xs uppercase tracking-widest text-gray-400 mb-4">
               Industries We Serve
@@ -45,15 +46,18 @@ export default function IndustriesWeServe() {
             </h2>
           </div>
 
-          <Link
-            href="/industries"
-            className="inline-flex items-center mt-12 text-sm font-medium text-white hover:text-orange-400 transition group"
-          >
-            View Full Industries Page
-            <span className="ml-2 transition-transform group-hover:translate-x-1">
-              →
-            </span>
-          </Link>
+          {/* Button at bottom */}
+          <div className="mt-auto">
+            <Link
+              href="/industries"
+              className="inline-flex items-center mt-12 text-sm font-medium text-white hover:text-orange-400 transition group"
+            >
+              View Full Industries Page
+              <span className="ml-2 transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
+          </div>
         </div>
 
         {/* RIGHT COLUMN */}
