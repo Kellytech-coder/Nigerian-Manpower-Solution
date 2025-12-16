@@ -22,63 +22,72 @@ export default function IndustriesWeServe() {
     { name: "Banking & Finance", icon: FaMoneyBillWave },
   ];
 
-  const primaryColor = "#FF8C00";   // Orange
-  const connectorColor = "#22395B";
+  const primaryColor = "#FF8C00"; // icon orange
+  const connectorColor = "#1F3558"; // muted blue connector
 
   return (
-    <section className="bg-[#0A1A33] text-white py-20 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start min-h-[500px]">
+    <section className="bg-[#081B36] text-white py-24">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20">
 
-        {/* Left Content */}
-        <div className="md:pr-10 pt-4 flex flex-col justify-between h-full">
+        {/* LEFT COLUMN */}
+        <div className="flex flex-col justify-between">
           <div>
-            <p className="text-sm font-medium uppercase text-gray-400 mb-2 tracking-widest">
+            <p className="text-xs uppercase tracking-widest text-gray-400 mb-4">
               Industries We Serve
             </p>
 
-            <h2 className="text-5xl font-extrabold mb-10 max-w-xl leading-snug">
-              We deliver manpower solutions across diverse sectors
+            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight max-w-xl">
+              We deliver manpower
+              <br />
+              solutions across
+              <br />
+              diverse sectors
             </h2>
           </div>
 
           <Link
             href="/industries"
-            className="inline-flex items-center text-white font-medium hover:text-orange-400 transition"
+            className="inline-flex items-center mt-12 text-sm font-medium text-white hover:text-orange-400 transition group"
           >
             View Full Industries Page
-            <span className="ml-2">→</span>
+            <span className="ml-2 transition-transform group-hover:translate-x-1">
+              →
+            </span>
           </Link>
         </div>
 
-        {/* Right Content */}
-        <div className="space-y-12">
+        {/* RIGHT COLUMN */}
+        <div className="relative space-y-14">
           {industries.map((industry, index) => {
             const Icon = industry.icon;
             const isLast = index === industries.length - 1;
 
             return (
-              <div key={index} className="flex items-start gap-6">
-                <div className="relative flex-shrink-0 w-10">
+              <div key={index} className="flex items-start gap-8 relative">
+
+                {/* ICON + CONNECTOR */}
+                <div className="relative flex flex-col items-center">
                   {!isLast && (
-                    <div
-                      className="absolute left-1/2 top-8 w-[2px]"
+                    <span
+                      className="absolute top-10 left-1/2 w-[2px]"
                       style={{
-                        height: "calc(100% + 48px)",
+                        height: "72px",
                         backgroundColor: connectorColor,
                         transform: "translateX(-50%)",
                       }}
                     />
                   )}
 
-                  <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center relative z-10"
+                  <span
+                    className="w-10 h-10 rounded-full flex items-center justify-center z-10"
                     style={{ backgroundColor: primaryColor }}
                   >
-                    <Icon className="text-white text-base" />
-                  </div>
+                    <Icon className="text-white text-lg" />
+                  </span>
                 </div>
 
-                <span className="text-2xl font-semibold leading-none pt-0.5">
+                {/* TEXT */}
+                <span className="text-2xl font-semibold leading-snug">
                   {industry.name}
                 </span>
               </div>

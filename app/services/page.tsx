@@ -3,6 +3,9 @@ import Header from '../components/services/Header';
 import WhatWeOffer from '../components/services/WhatWeOffer';
 import SpecializedServices from '../components/services/SpecializedServices';
 import IndustriesWeServe from '../components/services/IndustriesWeServe';
+import HowWeWork from '../components/services/HowWeWork';
+import Hero from '../components/services/Hero';
+import Footer from '../components/services/Footer';
 
 export default function Home() {
   return (
@@ -12,6 +15,9 @@ export default function Home() {
       <WhatWeOffer />
       <SpecializedServices />
       <IndustriesWeServe />
+      <HowWeWork />
+      <Hero />
+      <Footer />
     </>
   );
 }

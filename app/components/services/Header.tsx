@@ -16,7 +16,7 @@ export default function Header() {
         pt-28
       "
       style={{
-        backgroundImage: "url('/images/manpower-hero.jpg')", // put image in /public/images
+        backgroundImage: "url('/images/services1.png')", // put image in /public/images
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

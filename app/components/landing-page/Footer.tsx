@@ -1,161 +1,105 @@
-// app/components/landing-page/Footer.tsx
-import Link from 'next/link';
-import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
-import Container from './Container';
-import FadeInWrapper from './FadeInOnScroll';
+import React from 'react';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
-export default function Footer() {
-  const navigationLinks = [
-    { label: 'Services', href: '#services' },
-    { label: 'Industries', href: '#industries' },
-    { label: 'Careers', href: '#careers' },
-    { label: 'Contact', href: '#contact' },
-    { label: 'Resources', href: '#resources' },
-  ];
+const Footer = () => {
+  // Define the dark grey background color
+  const darkGrey = '#1A1A1A'; 
 
+  // Links data for the Quick links section
   const quickLinks = [
-    { label: 'Services', href: '#services' },
-    { label: 'Industries', href: '#industries' },
-    { label: 'Careers', href: '#careers' },
-    { label: 'Resources', href: '#resources' },
+    { name: 'Home', href: '#' },
+    { name: 'Services', href: '#' },
+    { name: 'Industries', href: '#' },
+    { name: 'About Us', href: '#' },
+    { name: 'Careers', href: '#' },
+    { name: 'Resources', href: '#' },
   ];
 
-  const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
-  ];
-
-  const legalLinks = [
-    { label: 'Privacy policy', href: '/privacy' },
-    { label: 'Terms of service', href: '/terms' },
-    { label: 'Cookies settings', href: '/cookies' },
+  // Social media icon mapping
+  const socialIcons = [
+    { icon: FaFacebookF, href: '#', label: 'Facebook' },
+    { icon: FaInstagram, href: '#', label: 'Instagram' },
+    { icon: FaTwitter, href: '#', label: 'Twitter/X' },
+    { icon: FaLinkedinIn, href: '#', label: 'LinkedIn' },
   ];
 
   return (
-    <footer className="bg-zinc-900 text-white">
-      <Container>
-        {/* Main Footer Content */}
-        <FadeInWrapper className="py-12 md:py-16 lg:py-20 px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-8">
-            {/* Company Info */}
-            <FadeInWrapper className="sm:col-span-2 lg:col-span-1">
-              {/* Logo */}
-              <div className="mb-6 md:mb-8">
-                <h3 className="text-xl md:text-2xl font-bold italic">Logo</h3>
-              </div>
-
-              {/* Address */}
-              <div className="mb-5 md:mb-6">
-                <h4 className="text-xs md:text-sm font-bold text-white mb-2 md:mb-3">
-                  Address
-                </h4>
-                <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-                  12 Marina Street, Victoria Island, Lagos, Nigeria
-                </p>
-              </div>
-
-              {/* Contact */}
-              <div className="mb-6 md:mb-8">
-                <h4 className="text-xs md:text-sm font-bold text-white mb-2 md:mb-3">
-                  Contact
-                </h4>
-                <div className="space-y-2">
-                  <a
-                    href="tel:+2340123456789"
-                    className="block text-gray-400 text-sm md:text-base hover:text-white transition-colors underline"
-                  >
-                    +234 (0) 123 456 7890
-                  </a>
-                  <a
-                    href="mailto:info@nigerianmanpower.com"
-                    className="block text-gray-400 text-sm md:text-base hover:text-white transition-colors underline break-all"
-                  >
-                    info@nigerianmanpower.com
-                  </a>
-                </div>
-              </div>
-
-              {/* Social Links */}
-              <div className="flex gap-3 md:gap-4">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      aria-label={social.label}
-                      className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-zinc-800 flex items-center justify-center hover:bg-amber-500 transition-colors duration-300"
-                    >
-                      <Icon className="w-4 h-4 md:w-5 md:h-5" />
-                    </a>
-                  );
-                })}
-              </div>
-            </FadeInWrapper>
-
-            {/* Navigation Links */}
-            <FadeInWrapper>
-              <nav className="space-y-3 md:space-y-4">
-                {navigationLinks.map((link) => (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className="block text-gray-300 hover:text-white transition-colors text-sm md:text-base"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
-            </FadeInWrapper>
-
-            {/* Quick Links */}
-            <FadeInWrapper>
-              <h4 className="text-white font-bold mb-4 md:mb-6 text-sm md:text-base">
-                Quick links
-              </h4>
-              <nav className="space-y-3 md:space-y-4">
-                {quickLinks.map((link) => (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className="block text-gray-300 hover:text-white transition-colors text-sm md:text-base"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
-            </FadeInWrapper>
-
-            {/* Empty column for spacing on desktop only */}
-            <div className="hidden lg:block"></div>
-          </div>
-        </FadeInWrapper>
-
-        {/* Bottom Bar */}
-        <FadeInWrapper className="border-t border-zinc-800 py-5 md:py-6 px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
-            {/* Copyright */}
-            <p className="text-gray-400 text-xs md:text-sm text-center md:text-left">
-              © 2024 Nigerian Manpower Outsourcing. All rights reserved.
+    <footer style={{ backgroundColor: darkGrey }} className="text-white pt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Top Section: Logo, Contact, and Quick Links */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 pb-12">
+          
+          {/* Column 1: Logo and Contact Info */}
+          <div className="col-span-1 md:col-span-2 lg:col-span-2">
+            <h2 className="text-3xl font-serif font-bold mb-8">Logo</h2> 
+            
+            <h3 className="text-lg font-bold mb-2">Address</h3>
+            <p className="text-gray-400 mb-6">12 Marina Street, Victoria Island, Lagos, Nigeria</p>
+            
+            <h3 className="text-lg font-bold mb-2">Contact</h3>
+            <p className="text-gray-400">+234 (0) 123 456 7890</p>
+            <p className="text-gray-400 mb-6">
+              <a href="mailto:info@nigerianmanpower.com" className="hover:text-white transition duration-200">
+                info@nigerianmanpower.com
+              </a>
             </p>
-
-            {/* Legal Links */}
-            <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">
-              {legalLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="text-gray-400 text-xs md:text-sm hover:text-white transition-colors underline"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            
+            {/* Social Icons */}
+            <div className="flex space-x-4">
+              {socialIcons.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <a
+                    key={index}
+                    href={item.href}
+                    aria-label={item.label}
+                    className="text-gray-400 hover:text-white transition duration-200 text-xl"
+                  >
+                    <Icon />
+                  </a>
+                );
+              })}
             </div>
           </div>
-        </FadeInWrapper>
-      </Container>
+          
+          {/* Column 2 & 3: Quick Links (using list) */}
+          <div className="col-span-1 lg:col-span-2">
+            <h3 className="text-xl font-bold mb-6">Quick links</h3>
+            <ul className="space-y-4">
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <a 
+                    href={link.href} 
+                    className="text-gray-400 hover:text-white transition duration-200"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Separator Line */}
+        <div className="border-t border-gray-700 my-8"></div>
+
+        {/* Bottom Section: Copyright and Legal Links */}
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 py-6">
+          <p className="order-2 md:order-1 mb-4 md:mb-0">
+            © 2025 Nigerian Manpower Outsourcing. All rights reserved.
+          </p>
+          
+          <div className="order-1 md:order-2 flex space-x-6">
+            <a href="#" className="hover:text-white transition duration-200">Privacy policy</a>
+            <a href="#" className="hover:text-white transition duration-200">Terms of service</a>
+            <a href="#" className="hover:text-white transition duration-200">Cookies settings</a>
+          </div>
+        </div>
+
+      </div>
     </footer>
   );
-}
+};
+
+export default Footer;
