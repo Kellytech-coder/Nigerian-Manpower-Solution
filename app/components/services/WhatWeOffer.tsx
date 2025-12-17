@@ -74,7 +74,7 @@ export default function WhatWeOffer() {
                 className="bg-[#0A1A33] rounded-2xl p-8 text-white hover:translate-y-[-4px] transition"
               >
                 {/* Icon */}
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-orange-500 mb-6">
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-amber-500 mb-6">
                   <Icon size={22} />
                 </div>
 
