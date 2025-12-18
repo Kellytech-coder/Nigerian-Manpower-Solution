@@ -50,7 +50,7 @@ export default function IndustriesWeServe() {
           <div className="mt-auto">
             <Link
               href="/industries"
-              className="inline-flex items-center mt-12 text-sm font-medium text-white hover:text-orange-400 transition group"
+              className="inline-flex items-center mt-12 text-sm font-medium text-white hover:text-amber-600 transition group"
             >
               View Full Industries Page
               <span className="ml-2 transition-transform group-hover:translate-x-1">
