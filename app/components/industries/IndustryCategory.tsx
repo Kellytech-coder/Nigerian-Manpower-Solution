@@ -158,7 +158,7 @@ const IndustryCategories = () => {
           <>
             <button
               onClick={handlePrev}
-              className="absolute top-1/2 left-2 -translate-y-1/2 bg-white text-black p-2 rounded-full"
+              className="absolute top-1/2 left-2 -translate-y-1/2 bg-white text-black p-2"
             >
               <ArrowLeft size={20} />
             </button>
