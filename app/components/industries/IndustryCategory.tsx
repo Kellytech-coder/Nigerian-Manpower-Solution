@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { ArrowLeft, ArrowRight, X } from "lucide-react";
 
 const industries = [
   {
@@ -65,33 +65,45 @@ const industries = [
   },
 ];
 
-const CARDS_PER_VIEW = 3;
 
 const IndustryCategories = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [viewAll, setViewAll] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [cardsPerView, setCardsPerView] = useState(1);
 
-  const maxIndex = industries.length - CARDS_PER_VIEW;
+  useEffect(() => {
+    // Update cards per view based on screen width
+    const updateCardsPerView = () => {
+      if (window.innerWidth >= 768) { // md breakpoint
+        setCardsPerView(3);
+      } else {
+        setCardsPerView(1);
+      }
+    };
+
+    updateCardsPerView();
+    window.addEventListener("resize", updateCardsPerView);
+
+    return () => window.removeEventListener("resize", updateCardsPerView);
+  }, []);
+
+  const maxIndex = industries.length - cardsPerView;
 
   const handleNext = () => {
-    setCurrentIndex((prev) =>
-      prev >= maxIndex ? 0 : prev + CARDS_PER_VIEW
-    );
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + cardsPerView));
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) =>
-      prev <= 0 ? maxIndex : prev - CARDS_PER_VIEW
-    );
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - cardsPerView));
   };
 
-  const visibleIndustries = viewAll
-    ? industries
-    : industries.slice(currentIndex, currentIndex + CARDS_PER_VIEW);
+  const visibleIndustries = industries.slice(
+    currentIndex,
+    currentIndex + cardsPerView
+  );
 
   return (
     <section className="bg-[#050B1C] text-white py-20 px-6 md:px-12 lg:px-24">
-
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
         <div className="max-w-2xl">
@@ -107,81 +119,96 @@ const IndustryCategories = () => {
         </div>
 
         <button
-          onClick={() => setViewAll(!viewAll)}
+          onClick={() => setIsModalOpen(true)}
           className="mt-6 md:mt-0 border border-gray-600 px-6 py-2 rounded-md text-sm hover:bg-white hover:text-black transition-all"
         >
-          {viewAll ? "Show less" : "View all"}
+          View all
         </button>
       </div>
 
-      {/* Cards */}
-      <div
-        className={`grid gap-6 mb-12 ${
-          viewAll
-            ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-            : "grid-cols-1 md:grid-cols-3"
-        }`}
-      >
-        {visibleIndustries.map((industry, index) => (
-          <div
-            key={index}
-            className="relative h-[480px] group overflow-hidden rounded-sm cursor-pointer"
-          >
+      {/* Carousel */}
+      <div className="relative">
+        <div className="grid gap-6 md:grid-cols-3">
+          {visibleIndustries.map((industry, index) => (
             <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-              style={{ backgroundImage: `url(${industry.image})` }}
+              key={index}
+              className="relative h-[480px] group overflow-hidden rounded-sm cursor-pointer"
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-            </div>
-
-            <div className="absolute inset-0 flex flex-col justify-end p-8">
-              <h3 className="text-2xl font-bold mb-4">
-                {industry.title}
-              </h3>
-              <p className="text-gray-300 text-sm mb-6">
-                {industry.description}
-              </p>
-              <button className="flex items-center text-sm font-semibold">
-  See full details
-  <ArrowRight className="ml-1 w-4 h-4" />
-</button>
-
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Controls (hidden when View All is active) */}
-      {!viewAll && (
-        <div className="flex justify-between items-center">
-          <div className="flex gap-2">
-            {Array.from({
-              length: Math.ceil(industries.length / CARDS_PER_VIEW),
-            }).map((_, i) => (
               <div
-                key={i}
-                className={`h-1.5 rounded-full ${
-                  i * CARDS_PER_VIEW === currentIndex
-                    ? "bg-white w-4"
-                    : "bg-gray-600 w-1.5"
-                }`}
-              />
-            ))}
-          </div>
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                style={{ backgroundImage: `url(${industry.image})` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+              </div>
 
-          <div className="hidden sm:flex gap-3">
+              <div className="absolute inset-0 flex flex-col justify-end p-8">
+                <h3 className="text-2xl font-bold mb-4">{industry.title}</h3>
+                <p className="text-gray-300 text-sm mb-6">{industry.description}</p>
+                <button className="flex items-center text-sm font-semibold">
+                  See full details
+                  <ArrowRight className="ml-1 w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Arrows (only on mobile or when carousel is active) */}
+        {cardsPerView === 1 && (
+          <>
             <button
               onClick={handlePrev}
-              className="p-3 bg-white text-black hover:bg-gray-200"
+              className="absolute top-1/2 left-2 -translate-y-1/2 bg-white text-black p-2 rounded-full"
             >
               <ArrowLeft size={20} />
             </button>
             <button
               onClick={handleNext}
-              className="p-3 bg-[#FF6B00] text-white hover:bg-[#e66000]"
+              className="absolute top-1/2 right-2 -translate-y-1/2 bg-[#FF6B00] text-white p-2 rounded-full"
             >
               <ArrowRight size={20} />
             </button>
+          </>
+        )}
+      </div>
+
+      {/* Modal for "View All" */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 bg-black/80 flex justify-center items-start overflow-auto py-20 px-4">
+          <div className="bg-[#050B1C] w-full max-w-6xl p-6 rounded-lg relative">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white"
+            >
+              <X size={24} />
+            </button>
+
+            <h2 className="text-3xl font-bold mb-6 text-white">All Industry Categories</h2>
+
+            <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              {industries.map((industry, index) => (
+                <div
+                  key={index}
+                  className="relative h-[480px] group overflow-hidden rounded-sm cursor-pointer"
+                >
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    style={{ backgroundImage: `url(${industry.image})` }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                  </div>
+
+                  <div className="absolute inset-0 flex flex-col justify-end p-8">
+                    <h3 className="text-2xl font-bold mb-4">{industry.title}</h3>
+                    <p className="text-gray-300 text-sm mb-6">{industry.description}</p>
+                    <button className="flex items-center text-sm font-semibold">
+                      See full details
+                      <ArrowRight className="ml-1 w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}
