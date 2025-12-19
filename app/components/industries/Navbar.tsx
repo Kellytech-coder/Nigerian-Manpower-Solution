@@ -9,7 +9,7 @@ export default function Navbar() {
 
   const mainLinks = [
     { label: "Home", href: "/landing-page" },
-    { label: "Industries", href: "/industries" },
+    { label: "Services", href: "/services" },
     { label: "About", href: "/about" },
   ];
 
