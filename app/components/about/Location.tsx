@@ -26,7 +26,7 @@ const LocationSection = () => {
 
           {/* Location Details */}
           <div className="lg:pr-12">
-            <div className="border-l-4 border-amber-600 pl-4">
+            <div className="border-l-4 border-amber-500 pl-4">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 Sydney
               </h3>
@@ -37,7 +37,7 @@ const LocationSection = () => {
                 href={mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium transition"
+                className="inline-flex items-center text-amber-500 hover:text-amber-600 font-medium transition"
               >
                 View Map →
               </a>
@@ -45,25 +45,23 @@ const LocationSection = () => {
           </div>
 
           {/* Clickable Map */}
-          <a
-            href={mapUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full h-80 bg-gray-200 rounded-lg
-                       flex items-center justify-center
-                       hover:opacity-90 hover:ring-2 hover:ring-amber-500
-                       transition cursor-pointer"
-            aria-label="Open map location"
-          >
-            <svg
-              className="w-1/4 h-1/4 text-gray-400"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-            </svg>
-          </a>
+<a
+  href={mapUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full rounded-lg overflow-hidden
+             hover:ring-2 hover:ring-amber-600 transition"
+  aria-label="Open map location"
+>
+  <div className="w-full h-80 flex items-center justify-center bg-white">
+    <img
+      src="/images/Maplogo.jpg"
+      alt="Map location"
+      className="max-w-full max-h-full object-contain"
+    />
+  </div>
+</a>
+
 
         </div>
       </div>
