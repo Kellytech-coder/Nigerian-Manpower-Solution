@@ -184,7 +184,7 @@ export default function Navbar() {
 
           <Link
             href="/contact"
-            className="w-full mt-3 bg-[#FF6A00] hover:bg-[#e65d00] text-white px-5 py-2 rounded-md text-sm font-medium block text-center"
+            className="w-full mt-3 bg-amber-500 hover:bg-amber-600 text-white px-5 py-2 rounded-md text-sm font-medium block text-center"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             Contact Us
