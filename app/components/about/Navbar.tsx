@@ -46,6 +46,46 @@ export default function Navbar() {
               </Link>
             ))}
 
+            {/* Desktop Resources Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                className="flex items-center text-white hover:text-gray-300 transition"
+              >
+                Resources
+                <svg
+                  className={`ml-1 h-4 w-4 transition-transform ${
+                    isResourcesOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {isResourcesOpen && (
+                <div className="absolute right-0 mt-3 w-44 bg-zinc-800 rounded-md shadow-xl z-50">
+                  {resourcesLinks.map(({ label, href }) => (
+                    <Link
+                      key={label}
+                      href={href}
+                      onClick={() => setIsResourcesOpen(false)}
+                      className="block px-4 py-3 text-white text-sm hover:bg-zinc-700"
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <Link
               href="/contact"
               className="bg-amber-500 hover:bg-[#e65d00] text-white px-5 py-2 rounded-md"
@@ -100,7 +140,7 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* Resources */}
+            {/* Mobile Resources Dropdown */}
             <button
               onClick={() => setIsResourcesOpen(!isResourcesOpen)}
               className="w-full flex justify-between items-center text-white py-2"
