@@ -8,19 +8,16 @@ export default function HeroSection() {
   return (
     <div
       style={{ perspective: 1200 }}
-      className="relative min-h-[100svh]"
+      className="relative min-h-[calc(100svh-4rem)] sm:min-h-[100svh] overflow-hidden"
     >
       <motion.section
         key="hero"
         initial={{ rotateY: 90, opacity: 0 }}
         animate={{ rotateY: 0, opacity: 1 }}
         exit={{ rotateY: -90, opacity: 0 }}
-        transition={{
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
         style={{ transformStyle: "preserve-3d" }}
-        className="relative w-full h-full flex items-start justify-center
+        className="absolute inset-0 flex items-start justify-center
                    px-4 sm:px-6 md:px-8 pt-20 sm:pt-24"
       >
         {/* Background */}
