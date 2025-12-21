@@ -1,11 +1,35 @@
+"use client";
 import React from "react";
+import { motion, Variants } from "framer-motion";
 
 const LocationSection = () => {
   const mapUrl =
     "https://www.google.com/maps?q=123+Sample+St,+Sydney+NSW+2000+AU";
 
+  // Compress animation
+  const compressVariants: Variants = {
+    hidden: { scaleY: 0.8, opacity: 0 }, // slightly compressed and invisible
+    visible: {
+      scaleY: 1,
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" }, // smooth dramatic reveal
+    },
+    exit: {
+      scaleY: 0.8,
+      opacity: 0,
+      transition: { duration: 0.6, ease: "easeIn" }, // compress out
+    },
+  };
+
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <motion.section
+      className="py-16 md:py-24 bg-white"
+      initial="hidden"
+      whileInView="visible"
+      exit="exit"
+      viewport={{ once: false, amount: 0.3 }}
+      variants={compressVariants}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -45,27 +69,26 @@ const LocationSection = () => {
           </div>
 
           {/* Clickable Map */}
-<a
-  href={mapUrl}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="block w-full rounded-lg overflow-hidden
-             hover:ring-2 hover:ring-amber-600 transition"
-  aria-label="Open map location"
->
-  <div className="w-full h-80 flex items-center justify-center bg-white">
-    <img
-      src="/images/Maplogo.jpg"
-      alt="Map location"
-      className="max-w-full max-h-full object-contain"
-    />
-  </div>
-</a>
-
+          <a
+            href={mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full rounded-lg overflow-hidden
+                       hover:ring-2 hover:ring-amber-600 transition"
+            aria-label="Open map location"
+          >
+            <div className="w-full h-80 flex items-center justify-center bg-white">
+              <img
+                src="/images/Maplogo.jpg"
+                alt="Map location"
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+          </a>
 
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

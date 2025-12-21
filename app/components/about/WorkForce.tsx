@@ -1,10 +1,32 @@
 "use client";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 
 export default function WorkforcePromo() {
-  return (
-    <section className="relative bg-[#06142A]">
+  // Expand animation variants
+  const expandVariants: Variants = {
+    hidden: { scale: 0.9, opacity: 0 }, // slightly smaller and invisible
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" }, // smooth dramatic reveal
+    },
+    exit: {
+      scale: 0.9,
+      opacity: 0,
+      transition: { duration: 0.6, ease: "easeIn" }, // compress out
+    },
+  };
 
+  return (
+    <motion.section
+      className="relative bg-[#06142A]"
+      initial="hidden"
+      whileInView="visible"
+      exit="exit"
+      viewport={{ once: false, amount: 0.3 }}
+      variants={expandVariants}
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
 
         {/* LEFT TEXT SIDE */}
@@ -42,6 +64,6 @@ export default function WorkforcePromo() {
         </div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

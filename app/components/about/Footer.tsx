@@ -1,29 +1,58 @@
-import React from 'react';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+"use client";
+import React from "react";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { motion, Variants } from "framer-motion";
 
-const Footer = () => {
-  // Define the dark grey background color
-  const darkGrey = '#1A1A1A'; 
+const Footer: React.FC = () => {
+  const darkGrey = "#1A1A1A";
 
-  // Links data for the Quick links section
   const quickLinks = [
-    { name: 'Home', href: '/landing-page' },
-    { name: 'Services', href: '/services' },
-    { name: 'Industries', href: '/services' },
-    { name: 'Careers', href: '#' },
-    { name: 'Resources', href: '#' },
+    { name: "Home", href: "/landing-page" },
+    { name: "Services", href: "/services" },
+    { name: "Industries", href: "/services" },
+    { name: "Careers", href: "#" },
+    { name: "Resources", href: "#" },
   ];
 
-  // Social media icon mapping
   const socialIcons = [
-    { icon: FaFacebookF, href: '#', label: 'Facebook' },
-    { icon: FaInstagram, href: '#', label: 'Instagram' },
-    { icon: FaTwitter, href: '#', label: 'Twitter/X' },
-    { icon: FaLinkedinIn, href: '#', label: 'LinkedIn' },
+    { icon: FaFacebookF, href: "#", label: "Facebook" },
+    { icon: FaInstagram, href: "#", label: "Instagram" },
+    { icon: FaTwitter, href: "#", label: "Twitter/X" },
+    { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
   ];
+
+  const bounceVariants: Variants = {
+  hidden: { y: 50, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 40,  // lower stiffness = slower, softer bounce
+      damping: 15,    // slightly higher damping to control overshoot
+      mass: 1.2,      // adds weight → slower movement
+      duration: 1.5,  // increase duration slightly
+      delay: 0.2,     // optional: small delay for more dramatic feel
+    },
+  },
+  exit: {
+    y: 50,
+    opacity: 0,
+    transition: { duration: 0.8, ease: "easeIn" }, // slower exit too
+  },
+};
+
 
   return (
-    <footer style={{ backgroundColor: darkGrey }} className="text-white pt-16">
+    <motion.footer
+      style={{ backgroundColor: darkGrey }}
+      className="text-white pt-16"
+      initial="hidden"
+      whileInView="visible"
+      exit="exit"
+      viewport={{ once: false, amount: 0.3 }}
+      variants={bounceVariants}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Section: Logo, Contact, and Quick Links */}
@@ -62,7 +91,7 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Column 2 & 3: Quick Links (using list) */}
+          {/* Column 2 & 3: Quick Links */}
           <div className="col-span-1 lg:col-span-2">
             <h3 className="text-xl font-bold mb-6">Quick links</h3>
             <ul className="space-y-4">
@@ -97,7 +126,7 @@ const Footer = () => {
         </div>
 
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
