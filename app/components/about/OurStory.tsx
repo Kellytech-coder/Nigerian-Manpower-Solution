@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { motion, Variants, easeOut, easeIn } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function AboutSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -85,25 +85,12 @@ export default function AboutSection() {
 
   const currentSlideData = slides[currentSlide];
 
-
-// Animation variants for dramatic zoom
-const zoomVariants: Variants = {
-  hidden: { scale: 0.8, opacity: 0, y: 30 },
-  visible: { 
-    scale: 1.05,
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: easeOut } // slower zoom-in
-  },
-  exit: { 
-    scale: 0.8,
-    opacity: 0,
-    y: -30,
-    transition: { duration: 0.8, ease: easeIn }
-  },
-};
-
-
+  // Animation variants for "Basic Zoom"
+  const zoomVariants = {
+    hidden: { scale: 0.9, opacity: 0 },
+    visible: { scale: 1, opacity: 1, transition: { duration: 0.20 } },
+    exit: { scale: 0.9, opacity: 0, transition: { duration: 0.10 } },
+  };
 
   return (
     <motion.section
