@@ -114,9 +114,12 @@ const OurProcess: React.FC = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        <button className="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300">
-          See Full How It Works
-        </button>
+        <a href="/how-it-work">
+  <button className="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300">
+    See Full How It Works
+  </button>
+</a>
+
       </motion.div>
     </motion.section>
   );

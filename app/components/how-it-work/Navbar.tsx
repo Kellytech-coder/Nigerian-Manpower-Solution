@@ -10,8 +10,8 @@ export default function Navbar() {
   const mainLinks = [
     { label: "Home", href: "/landing-page" },
     { label: "Services", href: "/services" },
+    { label: "Industries", href: "/industries" },
     { label: "About", href: "/about" },
-    { label: "How It Work", href: "/how-it-work" },
   ];
 
   const resourcesLinks = [

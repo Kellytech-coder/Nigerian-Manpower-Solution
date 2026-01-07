@@ -27,6 +27,7 @@ export default function Header() {
         <nav className="hidden lg:flex items-center gap-8 xl:gap-10 text-sm text-white">
           <a href="/services" className="hover:text-gray-300 transition">Services</a>
           <a href="/industries" className="hover:text-gray-300 transition">Industries</a>
+          <a href="/how-it-work" className="hover:text-gray-300 transition">How It Work</a>
           <Link href="/about" className="hover:text-gray-300 transition">About</Link>
 
           {/* Resources dropdown */}

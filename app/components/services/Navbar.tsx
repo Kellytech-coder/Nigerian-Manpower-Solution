@@ -11,6 +11,7 @@ export default function Navbar() {
     { label: "Home", href: "/landing-page" },
     { label: "Industries", href: "/industries" },
     { label: "About", href: "/about" },
+    { label: "How It Work", href: "/how-it-work" },
   ];
 
   const resourcesLinks = [

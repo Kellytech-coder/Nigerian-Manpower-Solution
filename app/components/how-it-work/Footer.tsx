@@ -8,8 +8,7 @@ const Footer = () => {
   // Links data for the Quick links section
   const quickLinks = [
     { name: 'Home', href: '/landing-page' },
-    { name: 'Services', href: '/services' },
-    { name: 'How It Work', href: '/how-it-work' },
+    { name: 'Industries', href: '#' },
     { name: 'About Us', href: '/about' },
     { name: 'Careers', href: '#' },
     { name: 'Resources', href: '#' },
