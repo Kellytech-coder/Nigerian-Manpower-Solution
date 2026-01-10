@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
   const quickLinks = [
     { name: "Home", href: "/landing-page" },
     { name: "Services", href: "/services" },
-    { name: "Industries", href: "/services" },
+    { name: "Industries", href: "/industries" },
     { name: "How it Work", href: "/how-it-work" },
     { name: "Careers", href: "#" },
     { name: "Resources", href: "#" },
@@ -120,8 +120,8 @@ const Footer: React.FC = () => {
           </p>
           
           <div className="order-1 md:order-2 flex space-x-6">
-            <a href="#" className="hover:text-white transition duration-200">Privacy policy</a>
-            <a href="#" className="hover:text-white transition duration-200">Terms of service</a>
+            <a href="/privacy-policy" className="hover:text-white transition duration-200">Privacy policy</a>
+            <a href="/terms-of-service" className="hover:text-white transition duration-200">Terms of service</a>
             <a href="#" className="hover:text-white transition duration-200">Cookies settings</a>
           </div>
         </div>

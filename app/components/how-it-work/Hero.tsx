@@ -7,7 +7,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/30.jpg"
+          src="/images/howitwork-hero.png"
           alt="Manpower Process Background"
           fill
           className="object-cover"

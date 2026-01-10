@@ -7,7 +7,7 @@ const PrivacyHero = () => {
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/30.jpg" // Ensure this image is in your /public folder
+          src="/images/privacy.png" // Ensure this image is in your /public folder
           alt="Professional team meeting"
           fill
           className="object-cover"
