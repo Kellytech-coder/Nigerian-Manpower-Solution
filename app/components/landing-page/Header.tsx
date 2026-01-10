@@ -180,25 +180,26 @@ export default function Header() {
               )}
             </div>
 
-            {/* Mobile CTA Buttons */}
-            <div className="flex flex-col gap-3 mt-4">
-              {/* ✅ Mobile Contact */}
-              <Link
-                href="/contact-us"
-                onClick={closeMobileMenu}
-                className="w-full text-center px-4 py-3 rounded-full border border-white/30 hover:bg-white/10"
-              >
-                Contact
-              </Link>
+           {/* Mobile CTA Buttons */}
+<div className="flex flex-col gap-3 mt-4">
+  {/* ✅ Mobile Contact */}
+  <Link
+    href="/contact-us"
+    onClick={closeMobileMenu}
+    className="w-full text-center px-4 py-3 rounded-full border border-white/30 hover:bg-white/10"
+  >
+    Contact
+  </Link>
 
-              <Link
-                href="/request"
-                onClick={closeMobileMenu}
-                className="w-full text-center px-4 py-3 rounded-full bg-amber-500 font-semibold hover:bg-amber-600"
-              >
-                Request
-              </Link>
-            </div>
+  <Link
+    href="/request"
+    onClick={closeMobileMenu}
+    className="w-full text-center px-4 py-3 rounded-full bg-amber-500 font-semibold hover:bg-amber-600"
+  >
+    Request
+  </Link>
+</div>
+
           </nav>
         </div>
       )}
