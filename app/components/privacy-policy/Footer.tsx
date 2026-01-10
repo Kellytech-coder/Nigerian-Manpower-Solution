@@ -7,7 +7,7 @@ const Footer = () => {
 
   // Links data for the Quick links section
   const quickLinks = [
-    { name: 'Services', href: '/services' },
+    { name: 'Home', href: '/landing-page' },
     { name: 'Industries', href: '/industries' },
     { name: 'About Us', href: '/about' },
     { name: 'How It Work', href: '/how-it-work' },
@@ -91,7 +91,6 @@ const Footer = () => {
           </p>
           
           <div className="order-1 md:order-2 flex space-x-6">
-            <a href="/privacy-policy" className="hover:text-white transition duration-200">Privacy policy</a>
             <a href="#" className="hover:text-white transition duration-200">Terms of service</a>
             <a href="#" className="hover:text-white transition duration-200">Cookies settings</a>
           </div>
