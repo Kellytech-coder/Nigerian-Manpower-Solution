@@ -37,7 +37,7 @@ export default function Header() {
           </Link>
 
           <Link href="/how-it-work" className="hover:text-gray-300 transition">
-            How It Work
+            How It Works
           </Link>
 
           <Link href="/about" className="hover:text-gray-300 transition">
@@ -52,20 +52,30 @@ export default function Header() {
             </button>
 
             <div className="absolute top-full left-0 mt-2 w-48 bg-zinc-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-              <Link href="/case-studies" className="block px-4 py-2 hover:bg-zinc-700 rounded-t-md">
+              <Link
+                href="/case-studies"
+                className="block px-4 py-2 hover:bg-zinc-700 rounded-t-md"
+              >
                 Case Studies
               </Link>
-              <Link href="/workforce" className="block px-4 py-2 hover:bg-zinc-700">
+              <Link
+                href="/workforce"
+                className="block px-4 py-2 hover:bg-zinc-700"
+              >
                 Workforce
               </Link>
-              <Link href="/careers" className="block px-4 py-2 hover:bg-zinc-700 rounded-b-md">
+              <Link
+                href="/careers"
+                className="block px-4 py-2 hover:bg-zinc-700 rounded-b-md"
+              >
                 Careers
               </Link>
             </div>
           </div>
 
+          {/* ✅ Desktop Contact */}
           <Link
-            href="/contact"
+            href="/contact-us"
             className="px-4 py-2 rounded-full border border-white/30 hover:bg-white/10 transition"
           >
             Contact
@@ -85,7 +95,11 @@ export default function Header() {
           className="lg:hidden p-2 rounded-md text-white hover:bg-white/10 transition"
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </div>
 
@@ -93,19 +107,35 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-zinc-900 border-t border-zinc-800">
           <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
-            <Link href="/services" onClick={closeMobileMenu} className="text-white py-2 hover:text-amber-500">
+            <Link
+              href="/services"
+              onClick={closeMobileMenu}
+              className="text-white py-2 hover:text-amber-500"
+            >
               Services
             </Link>
 
-            <Link href="/industries" onClick={closeMobileMenu} className="text-white py-2 hover:text-amber-500">
+            <Link
+              href="/industries"
+              onClick={closeMobileMenu}
+              className="text-white py-2 hover:text-amber-500"
+            >
               Industries
             </Link>
 
-            <Link href="/how-it-work" onClick={closeMobileMenu} className="text-white py-2 hover:text-amber-500">
-              How It Work
+            <Link
+              href="/how-it-work"
+              onClick={closeMobileMenu}
+              className="text-white py-2 hover:text-amber-500"
+            >
+              How It Works
             </Link>
 
-            <Link href="/about" onClick={closeMobileMenu} className="text-white py-2 hover:text-amber-500">
+            <Link
+              href="/about"
+              onClick={closeMobileMenu}
+              className="text-white py-2 hover:text-amber-500"
+            >
               About
             </Link>
 
@@ -117,19 +147,33 @@ export default function Header() {
               >
                 <span>Resources</span>
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform ${isResourcesOpen ? 'rotate-180' : ''}`}
+                  className={`w-4 h-4 transition-transform ${
+                    isResourcesOpen ? 'rotate-180' : ''
+                  }`}
                 />
               </button>
 
               {isResourcesOpen && (
                 <div className="pl-4 mt-2 space-y-2">
-                  <Link href="/case-studies" onClick={closeMobileMenu} className="block text-gray-400 hover:text-amber-500">
+                  <Link
+                    href="/case-studies"
+                    onClick={closeMobileMenu}
+                    className="block text-gray-400 hover:text-amber-500"
+                  >
                     Case Studies
                   </Link>
-                  <Link href="/workforce" onClick={closeMobileMenu} className="block text-gray-400 hover:text-amber-500">
+                  <Link
+                    href="/workforce"
+                    onClick={closeMobileMenu}
+                    className="block text-gray-400 hover:text-amber-500"
+                  >
                     Workforce
                   </Link>
-                  <Link href="/careers" onClick={closeMobileMenu} className="block text-gray-400 hover:text-amber-500">
+                  <Link
+                    href="/careers"
+                    onClick={closeMobileMenu}
+                    className="block text-gray-400 hover:text-amber-500"
+                  >
                     Careers
                   </Link>
                 </div>
@@ -138,8 +182,9 @@ export default function Header() {
 
             {/* Mobile CTA Buttons */}
             <div className="flex flex-col gap-3 mt-4">
+              {/* ✅ Mobile Contact */}
               <Link
-                href="/contact"
+                href="/contact-us"
                 onClick={closeMobileMenu}
                 className="w-full text-center px-4 py-3 rounded-full border border-white/30 hover:bg-white/10"
               >

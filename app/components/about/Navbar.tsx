@@ -12,7 +12,7 @@ export default function Navbar() {
     { label: "Home", href: "/landing-page" },
     { label: "Services", href: "/services" },
     { label: "Industries", href: "/industries" },
-    { label: "How It work", href: "/how-it-work" },
+    { label: "How It Works", href: "/how-it-work" },
   ];
 
   const resourcesLinks = [
@@ -87,9 +87,10 @@ export default function Navbar() {
               )}
             </div>
 
+            {/* ✅ Desktop Contact Button */}
             <Link
-              href="/contact"
-              className="bg-amber-500 hover:bg-[#e65d00] text-white px-5 py-2 rounded-md"
+              href="/contact-us"
+              className="bg-amber-500 hover:bg-[#e65d00] text-white px-5 py-2 rounded-md transition-colors"
             >
               Contact Us
             </Link>
@@ -99,6 +100,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden text-white"
+            aria-label="Open menu"
           >
             <svg
               className="h-7 w-7"
@@ -117,7 +119,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* MOBILE MENU (Animated) */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -165,10 +167,11 @@ export default function Navbar() {
               </div>
             )}
 
+            {/* ✅ Mobile Contact Button */}
             <Link
-              href="/contact"
+              href="/contact-us"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block mt-4 bg-amber-500 text-white text-center py-2 rounded-md"
+              className="block mt-4 bg-amber-500 text-white text-center py-2 rounded-md transition-colors hover:bg-[#e65d00]"
             >
               Contact Us
             </Link>
