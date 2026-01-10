@@ -31,27 +31,34 @@ const DeploymentTimeline = () => {
           {/* Horizontal Line (Desktop) */}
           <div className="absolute top-7 left-0 w-full h-[1px] bg-gray-700 z-0 hidden md:block" />
 
-          {/* Vertical Line (Mobile) */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gray-700 z-0 md:hidden" />
+          {/* Vertical Line (Mobile aligned to icons) */}
+          <div className="absolute left-7 top-0 bottom-0 w-[2px] bg-gray-700 z-0 md:hidden" />
 
           {/* Steps Grid */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-12 relative z-10">
             {timelineSteps.map((step, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center md:items-start text-center md:text-left group"
+                className="flex flex-row md:flex-col items-start md:items-start
+                           text-left md:text-left gap-6 group"
               >
                 {/* Icon Circle */}
-                <div className="w-14 h-14 rounded-full bg-[#ff6f00] flex items-center justify-center text-white mb-6 shadow-[0_0_20px_rgba(255,111,0,0.3)] group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-full bg-[#ff6f00]
+                                flex items-center justify-center text-white
+                                shadow-[0_0_20px_rgba(255,111,0,0.3)]
+                                group-hover:scale-110 transition-transform
+                                shrink-0">
                   {step.icon}
                 </div>
 
                 {/* Text Content */}
-                <div className="space-y-2">
+                <div className="space-y-2 pt-1 md:pt-0">
                   <span className="text-sm font-medium text-gray-400 block uppercase tracking-wider">
                     {step.day}
                   </span>
-                  <h3 className="text-xl font-bold leading-snug">{step.title}</h3>
+                  <h3 className="text-xl font-bold leading-snug">
+                    {step.title}
+                  </h3>
                 </div>
               </div>
             ))}
