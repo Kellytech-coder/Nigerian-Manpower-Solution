@@ -32,11 +32,11 @@ const HeroSection = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="w-full sm:w-auto rounded-md bg-[#ff6f00] px-6 sm:px-8 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:bg-[#e65100]">
+          <button className="min-w-[200px] rounded-md bg-[#ff6f00] px-6 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:bg-[#e65100]">
             Request Manpower
           </button>
           
-          <button className="w-full sm:w-auto rounded-md border border-gray-400 bg-white/10 px-6 sm:px-8 py-3 text-sm sm:text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20">
+          <button className="min-w-[200px] rounded-md border border-gray-400 bg-white/10 px-6 py-3 text-sm sm:text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20">
             Speak With Our Team
           </button>
         </div>
