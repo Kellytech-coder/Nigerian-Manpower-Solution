@@ -154,17 +154,27 @@ const PrivacyContent = () => {
           </article>
 
           <article id="rights">
-            <h2 className="text-4xl font-bold mb-6">Your Rights</h2>
-            <p className="text-gray-400 mb-4">Depending on applicable laws, you have the right to:</p>
-            <ol className="list-decimal list-inside text-gray-300 space-y-2 ml-2">
-              <li>Access your data</li>
-              <li>Request correction or deletion</li>
-              <li>Withdraw consent</li>
-              <li>Request data portability</li>
-              <li>Restrict processing</li>
-            </ol>
-            <p className="mt-6 text-gray-300">To exercise rights, email: <span className="font-bold text-[#ff6f00]">Privacy@nigerianmanpowersolutions.com</span></p>
-          </article>
+  <h2 className="text-4xl font-bold mb-6">Your Rights</h2>
+  <p className="text-gray-400 mb-4">Depending on applicable laws, you have the right to:</p>
+  <ol className="list-decimal list-inside text-gray-300 space-y-2 ml-2">
+    <li>Access your data</li>
+    <li>Request correction or deletion</li>
+    <li>Withdraw consent</li>
+    <li>Request data portability</li>
+    <li>Restrict processing</li>
+  </ol>
+
+  <p className="mt-6 text-gray-300">
+    To exercise rights, email:{" "}
+    <a
+      href="mailto:Privacy@nigerianmanpowersolutions.com"
+      className="font-bold text-blue-500 hover:underline"
+    >
+      Privacy@nigerianmanpowersolutions.com
+    </a>
+  </p>
+</article>
+
 
           <article id="cookies">
             <h2 className="text-4xl font-bold mb-6">Cookies Policy</h2>
@@ -195,7 +205,7 @@ const PrivacyContent = () => {
             <h2 className="text-4xl font-bold mb-6">Contact Us</h2>
             <p className="text-gray-400 mb-4">For privacy-related questions:</p>
             <div className="space-y-1">
-              <p className="text-gray-300"><span className="font-bold">Email:</span> <a href="mailto:privacy@nigerianmanpowersolutions.com" className="text-[#ff6f00] hover:underline">privacy@nigerianmanpowersolutions.com</a></p>
+              <p className="text-gray-300"><span className="font-bold">Email:</span> <a href="mailto:privacy@nigerianmanpowersolutions.com" className="text-blue-500 hover:underline">privacy@nigerianmanpowersolutions.com</a></p>
               <p className="text-gray-300"><span className="font-bold">Phone:</span> +234 000 000 0000</p>
             </div>
           </article>

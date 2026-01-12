@@ -41,15 +41,20 @@ export default function WorkforcePromo() {
             with the right manpower.
           </p>
 
-          <div className="flex flex-wrap gap-4">
-            <button className="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2.5 px-7 rounded-full transition-all">
-              Request manpower
-            </button>
+         <div className="flex flex-wrap gap-4">
+  <a href="/request-manpower">
+    <button className="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2.5 px-7 rounded-full transition-all">
+      Request manpower
+    </button>
+  </a>
 
-            <button className="bg-white hover:bg-gray-100 text-blue-900 font-semibold py-2.5 px-7 rounded-full transition-all">
-              Contact Us
-            </button>
-          </div>
+  <a href="/contact-us">
+    <button className="bg-white hover:bg-gray-100 text-blue-900 font-semibold py-2.5 px-7 rounded-full transition-all">
+      Contact Us
+    </button>
+  </a>
+</div>
+
         </div>
 
         {/* RIGHT IMAGE — full height */}

@@ -1,208 +1,171 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import Link from 'next/link';
+import { useState } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function Header() {
+export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
 
-  const toggleMobileMenu = () => setIsMobileMenuOpen(prev => !prev);
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-    setIsResourcesOpen(false);
-  };
+  const mainLinks = [
+    { label: "Services", href: "/services" },
+    { label: "Industries", href: "/industries" },
+    { label: "About", href: "/about" },
+    { label: "How It Works", href: "/how-it-work" },
+  ];
+
+  const resourcesLinks = [
+    { label: "Case Studies", href: "/case-studies" },
+    { label: "Work Force", href: "/work-force" },
+    { label: "Careers", href: "/careers" },
+  ];
 
   return (
-    <header className="bg-[#1A1A1A] sticky top-0 z-50">
-      {/* Top Bar */}
-      <div className="container mx-auto px-4 md:px-6 py-4 md:py-5 flex items-center justify-between">
-        {/* Logo */}
-        <div
-          className="text-2xl md:text-3xl font-normal text-white"
-          style={{ fontFamily: `'Pacifico', cursive` }}
-        >
-          Logo
-        </div>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-10 text-sm text-white">
-          <Link href="/services" className="hover:text-gray-300 transition">
-            Services
+    <header className="fixed w-full z-50">
+      <nav className="max-w-7xl mx-auto px-4">
+       <div className="bg-[#1a1a1a] rounded-b-2xl px-6 lg:px-10 h-16 flex items-center justify-between shadow-lg">
+          
+          {/* Logo */}
+          <Link
+            href="/"
+            className="text-white text-2xl italic tracking-wide"
+            style={{ fontFamily: "Great Vibes, cursive" }}
+          >
+            Logo
           </Link>
 
-          <Link href="/industries" className="hover:text-gray-300 transition">
-            Industries
-          </Link>
-
-          <Link href="/how-it-work" className="hover:text-gray-300 transition">
-            How It Works
-          </Link>
-
-          <Link href="/about" className="hover:text-gray-300 transition">
-            About
-          </Link>
-
-          {/* Resources Dropdown */}
-          <div className="relative group">
-            <button className="flex items-center gap-1 hover:text-gray-300 transition">
-              <span>Resources</span>
-              <ChevronDown className="w-4 h-4" />
-            </button>
-
-            <div className="absolute top-full left-0 mt-2 w-48 bg-zinc-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8">
+            {mainLinks.map(({ label, href }) => (
               <Link
-                href="/case-studies"
-                className="block px-4 py-2 hover:bg-zinc-700 rounded-t-md"
+                key={label}
+                href={href}
+                className="text-white/90 hover:text-white transition"
               >
-                Case Studies
+                {label}
               </Link>
-              <Link
-                href="/workforce"
-                className="block px-4 py-2 hover:bg-zinc-700"
+            ))}
+
+            {/* Resources Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                className="flex items-center gap-1 text-white/90 hover:text-white transition"
               >
-                Workforce
-              </Link>
-              <Link
-                href="/careers"
-                className="block px-4 py-2 hover:bg-zinc-700 rounded-b-md"
-              >
-                Careers
-              </Link>
+                Resources
+                <svg
+                  className={`w-4 h-4 transition-transform ${
+                    isResourcesOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <AnimatePresence>
+                {isResourcesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    className="absolute top-12 right-0 w-44 bg-[#222] rounded-xl shadow-xl overflow-hidden"
+                  >
+                    {resourcesLinks.map(({ label, href }) => (
+                      <Link
+                        key={label}
+                        href={href}
+                        onClick={() => setIsResourcesOpen(false)}
+                        className="block px-4 py-3 text-sm text-white/80 hover:bg-[#2d2d2d] hover:text-white"
+                      >
+                        {label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
 
-          {/* ✅ Desktop Contact */}
-          <Link
-            href="/contact-us"
-            className="px-4 py-2 rounded-full border border-white/30 hover:bg-white/10 transition"
-          >
-            Contact
-          </Link>
+          {/* Right Actions */}
+          <div className="hidden md:flex items-center gap-5">
+            <Link
+              href="/contact-us"
+              className="text-white/90 hover:text-white transition"
+            >
+              Contact
+            </Link>
 
-          <Link
-            href="/request"
-            className="px-5 py-2 rounded-full bg-amber-500 font-semibold hover:bg-amber-600 transition"
-          >
-            Request
-          </Link>
-        </nav>
+            <Link
+              href="/request-manpower"
+              className="bg-[#ff6f00] hover:bg-[#e65d00] text-white px-6 py-2 rounded-full font-medium transition"
+            >
+              Request
+            </Link>
+          </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMobileMenu}
-          className="lg:hidden p-2 rounded-md text-white hover:bg-white/10 transition"
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
-          )}
-        </button>
-      </div>
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden text-white"
+          >
+            <svg
+              className="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden bg-zinc-900 border-t border-zinc-800">
-          <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
-            <Link
-              href="/services"
-              onClick={closeMobileMenu}
-              className="text-white py-2 hover:text-amber-500"
-            >
-              Services
-            </Link>
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            className="md:hidden mt-4 mx-4 bg-[#1a1a1a] rounded-2xl px-6 py-6 space-y-4"
+          >
+            {[...mainLinks, { label: "Contact", href: "/contact-us" }].map(
+              ({ label, href }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-white/90"
+                >
+                  {label}
+                </Link>
+              )
+            )}
 
             <Link
-              href="/industries"
-              onClick={closeMobileMenu}
-              className="text-white py-2 hover:text-amber-500"
+              href="/request-manpower"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block mt-3 bg-[#ff6f00] text-center text-white py-2 rounded-full"
             >
-              Industries
+              Request
             </Link>
-
-            <Link
-              href="/how-it-work"
-              onClick={closeMobileMenu}
-              className="text-white py-2 hover:text-amber-500"
-            >
-              How It Works
-            </Link>
-
-            <Link
-              href="/about"
-              onClick={closeMobileMenu}
-              className="text-white py-2 hover:text-amber-500"
-            >
-              About
-            </Link>
-
-            {/* Mobile Resources */}
-            <div>
-              <button
-                onClick={() => setIsResourcesOpen(prev => !prev)}
-                className="flex items-center justify-between w-full text-white py-2 hover:text-amber-500"
-              >
-                <span>Resources</span>
-                <ChevronDown
-                  className={`w-4 h-4 transition-transform ${
-                    isResourcesOpen ? 'rotate-180' : ''
-                  }`}
-                />
-              </button>
-
-              {isResourcesOpen && (
-                <div className="pl-4 mt-2 space-y-2">
-                  <Link
-                    href="/case-studies"
-                    onClick={closeMobileMenu}
-                    className="block text-gray-400 hover:text-amber-500"
-                  >
-                    Case Studies
-                  </Link>
-                  <Link
-                    href="/workforce"
-                    onClick={closeMobileMenu}
-                    className="block text-gray-400 hover:text-amber-500"
-                  >
-                    Workforce
-                  </Link>
-                  <Link
-                    href="/careers"
-                    onClick={closeMobileMenu}
-                    className="block text-gray-400 hover:text-amber-500"
-                  >
-                    Careers
-                  </Link>
-                </div>
-              )}
-            </div>
-
-           {/* Mobile CTA Buttons */}
-<div className="flex flex-col gap-3 mt-4">
-  {/* ✅ Mobile Contact */}
-  <Link
-    href="/contact-us"
-    onClick={closeMobileMenu}
-    className="w-full text-center px-4 py-3 rounded-full border border-white/30 hover:bg-white/10"
-  >
-    Contact
-  </Link>
-
-  <Link
-    href="/request"
-    onClick={closeMobileMenu}
-    className="w-full text-center px-4 py-3 rounded-full bg-amber-500 font-semibold hover:bg-amber-600"
-  >
-    Request
-  </Link>
-</div>
-
-          </nav>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

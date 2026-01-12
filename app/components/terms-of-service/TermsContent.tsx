@@ -97,6 +97,9 @@ const TermsOfServiceContent = () => {
           <p className="text-gray-300 leading-relaxed">
             We may suspend or terminate user access for violations of these <span className="underline">Terms</span>.
           </p>
+          <p className="text-gray-300 leading-relaxed">
+            Without notice to the users
+          </p>
         </article>
 
         {/* Section 10: Governing Law */}
