@@ -122,18 +122,15 @@ export default function Navbar() {
             aria-label="Toggle Menu"
           >
             <svg
-              className="w-7 h-7"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+  className="w-6 h-6"
+  fill="currentColor"
+  viewBox="0 0 24 24"
+>
+  <circle cx="12" cy="5" r="2" />
+  <circle cx="12" cy="12" r="2" />
+  <circle cx="12" cy="19" r="2" />
+</svg>
+
           </button>
         </div>
       </nav>
