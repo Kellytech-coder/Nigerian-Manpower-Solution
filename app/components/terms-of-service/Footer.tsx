@@ -9,6 +9,7 @@ const Footer = () => {
   const quickLinks = [
     { name: 'Home', href: '/landing-page' },
     { name: 'Industries', href: '/industries' },
+    { name: 'Services', href: '/services' },
     { name: 'About Us', href: '/about' },
     { name: 'How It Work', href: '/how-it-work' },
     { name: 'Careers', href: '#' },
