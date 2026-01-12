@@ -12,7 +12,7 @@ export default function Navbar() {
     { label: "Home", href: "/landing-page" },
     { label: "Services", href: "/services" },
     { label: "Industries", href: "/industries" },
-    { label: "About Us", href: "/about" },
+    { label: "About", href: "/about" },
   ];
 
   const resourcesLinks = [

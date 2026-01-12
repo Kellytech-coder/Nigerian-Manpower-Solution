@@ -55,15 +55,14 @@ export default function Navbar() {
               >
                 Resources
                 <svg
-  className="w-6 h-6"
-  fill="currentColor"
-  viewBox="0 0 24 24"
->
-  <circle cx="12" cy="5" r="2" />
-  <circle cx="12" cy="12" r="2" />
-  <circle cx="12" cy="19" r="2" />
-</svg>
-
+                  className="w-6 h-6 ml-1"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="5" r="2" />
+                  <circle cx="12" cy="12" r="2" />
+                  <circle cx="12" cy="19" r="2" />
+                </svg>
               </button>
 
               {isResourcesOpen && (
@@ -82,7 +81,7 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* ✅ Desktop Contact Button */}
+            {/* Desktop Contact Button */}
             <Link
               href="/contact-us"
               className="bg-amber-500 hover:bg-[#e65d00] text-white px-5 py-2 rounded-md transition-colors"
@@ -98,17 +97,13 @@ export default function Navbar() {
             aria-label="Open menu"
           >
             <svg
-              className="h-7 w-7"
-              fill="none"
-              stroke="currentColor"
+              className="w-6 h-6"
+              fill="currentColor"
               viewBox="0 0 24 24"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+              <circle cx="12" cy="5" r="2" />
+              <circle cx="12" cy="12" r="2" />
+              <circle cx="12" cy="19" r="2" />
             </svg>
           </button>
         </div>
@@ -121,7 +116,7 @@ export default function Navbar() {
             key="mobile-menu"
             initial={{ x: "-100%" }}
             animate={{ x: 0 }}
-            exit={{ x: "100%" }}
+            exit={{ x: "-100%" }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
             className="fixed top-16 sm:top-20 left-0 w-full
                        bg-[#1A1A1A] px-5 py-6 space-y-3
@@ -162,7 +157,7 @@ export default function Navbar() {
               </div>
             )}
 
-            {/* ✅ Mobile Contact Button */}
+            {/* Mobile Contact Button */}
             <Link
               href="/contact-us"
               onClick={() => setIsMobileMenuOpen(false)}
