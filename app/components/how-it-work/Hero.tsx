@@ -32,7 +32,7 @@ const HeroSection = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="min-w-[200px] rounded-md bg-[#ff6f00] px-6 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:bg-[#e65100]">
+          <button className="min-w-[200px] rounded-md bg-amber-500 px-6 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:bg-[#e65100]">
             Request Manpower
           </button>
           
