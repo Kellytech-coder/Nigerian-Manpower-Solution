@@ -20,7 +20,7 @@ const HeroCTA = () => {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <button className="bg-[#FF6B00] hover:bg-[#e66000] text-white px-7 py-3 rounded-md font-semibold transition-colors">
+            <button className="bg-amber-500 hover:bg-amber-600 text-white px-7 py-3 rounded-md font-semibold transition-colors">
               Request manpower
             </button>
 
