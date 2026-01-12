@@ -90,7 +90,7 @@ export default function Navbar() {
             {/* ✅ Desktop Contact Button */}
             <Link
               href="/contact-us"
-              className="bg-amber-500 hover:bg-[#e65d00] text-white px-5 py-2 rounded-md transition-colors"
+              className="bg-amber-500 hover:bg-amber-600 text-white px-5 py-2 rounded-md transition-colors"
             >
               Contact Us
             </Link>
