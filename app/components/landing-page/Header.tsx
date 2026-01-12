@@ -6,7 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  const [isDesktopResourcesOpen, setIsDesktopResourcesOpen] = useState(false);
+  const [isMobileResourcesOpen, setIsMobileResourcesOpen] = useState(false);
 
   const mainLinks = [
     { label: "Services", href: "/services" },
@@ -24,7 +25,7 @@ export default function Navbar() {
   return (
     <header className="fixed w-full z-50">
       <nav className="max-w-7xl mx-auto px-4">
-       <div className="bg-[#1a1a1a] rounded-b-2xl px-6 lg:px-10 h-16 flex items-center justify-between shadow-lg">
+        <div className="bg-[#1a1a1a] rounded-b-2xl px-6 lg:px-10 h-16 flex items-center justify-between shadow-lg">
           
           {/* Logo */}
           <Link
@@ -35,7 +36,7 @@ export default function Navbar() {
             Logo
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {mainLinks.map(({ label, href }) => (
               <Link
@@ -47,16 +48,18 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* Resources Dropdown */}
+            {/* Desktop Resources Dropdown */}
             <div className="relative">
               <button
-                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                onClick={() =>
+                  setIsDesktopResourcesOpen(!isDesktopResourcesOpen)
+                }
                 className="flex items-center gap-1 text-white/90 hover:text-white transition"
               >
                 Resources
                 <svg
                   className={`w-4 h-4 transition-transform ${
-                    isResourcesOpen ? "rotate-180" : ""
+                    isDesktopResourcesOpen ? "rotate-180" : ""
                   }`}
                   fill="none"
                   stroke="currentColor"
@@ -72,7 +75,7 @@ export default function Navbar() {
               </button>
 
               <AnimatePresence>
-                {isResourcesOpen && (
+                {isDesktopResourcesOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -83,7 +86,7 @@ export default function Navbar() {
                       <Link
                         key={label}
                         href={href}
-                        onClick={() => setIsResourcesOpen(false)}
+                        onClick={() => setIsDesktopResourcesOpen(false)}
                         className="block px-4 py-3 text-sm text-white/80 hover:bg-[#2d2d2d] hover:text-white"
                       >
                         {label}
@@ -95,7 +98,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Right Actions */}
+          {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-5">
             <Link
               href="/contact-us"
@@ -112,10 +115,11 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden text-white"
+            aria-label="Toggle Menu"
           >
             <svg
               className="w-7 h-7"
@@ -143,23 +147,67 @@ export default function Navbar() {
             exit={{ y: -20, opacity: 0 }}
             className="md:hidden mt-4 mx-4 bg-[#1a1a1a] rounded-2xl px-6 py-6 space-y-4"
           >
-            {[...mainLinks, { label: "Contact", href: "/contact-us" }].map(
-              ({ label, href }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-white/90"
+            {mainLinks.map(({ label, href }) => (
+              <Link
+                key={label}
+                href={href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-white/90 py-2"
+              >
+                {label}
+              </Link>
+            ))}
+
+            {/* Mobile Resources Accordion */}
+            <button
+              onClick={() =>
+                setIsMobileResourcesOpen(!isMobileResourcesOpen)
+              }
+              className="w-full flex justify-between items-center text-white/90 py-2"
+            >
+              <span>Resources</span>
+              <span className="text-xl">
+                {isMobileResourcesOpen ? "−" : "+"}
+              </span>
+            </button>
+
+            <AnimatePresence>
+              {isMobileResourcesOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  className="pl-4 space-y-2 overflow-hidden"
                 >
-                  {label}
-                </Link>
-              )
-            )}
+                  {resourcesLinks.map(({ label, href }) => (
+                    <Link
+                      key={label}
+                      href={href}
+                      onClick={() => {
+                        setIsMobileResourcesOpen(false);
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="block text-sm text-gray-300"
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            <Link
+              href="/contact-us"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block text-white/90 py-2"
+            >
+              Contact
+            </Link>
 
             <Link
               href="/request-manpower"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block mt-3 bg-[#ff6f00] text-center text-white py-2 rounded-full"
+              className="block mt-3 bg-amber-500 text-center text-white py-2 rounded-full"
             >
               Request
             </Link>
