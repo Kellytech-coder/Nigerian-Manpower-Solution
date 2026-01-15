@@ -7,7 +7,7 @@ const TermsOfServiceHero = () => {
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/terms-hero-bg.jpg" // Replace with your actual image path from public folder
+          src="/images/terms2.png" // Replace with your actual image path from public folder
           alt="Hands filling out legal paperwork"
           fill
           className="object-cover"
