@@ -26,17 +26,25 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="bg-[#1A1A1A] fixed w-full z-30">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+    <header className="fixed w-full z-30">
+      {/* ✅ NAVBAR CONTAINER ONLY */}
+      <nav
+        className="
+          max-w-7xl mx-auto
+          px-4 sm:px-6 lg:px-10
+          bg-[#1A1A1A]
+          rounded-b-2xl
+          shadow-lg
+        "
+      >
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0" onClick={closeAllMenus}>
-            <h1
-              className="text-white text-2xl sm:text-3xl italic font-[400] tracking-wide"
-              style={{ fontFamily: "Great Vibes, cursive" }}
-            >
-              Logo
-            </h1>
+          <Link href="/" className="flex items-center">
+            <img
+              src="/images/logo2.png"
+              alt="Nigeria Manpower Solution"
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -107,12 +115,7 @@ export default function Navbar() {
               className="text-white"
               aria-label="Toggle mobile menu"
             >
-              {/* Three stacked dots icon */}
-              <svg
-                className="h-6 w-6"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                 <circle cx="12" cy="5" r="2" />
                 <circle cx="12" cy="12" r="2" />
                 <circle cx="12" cy="19" r="2" />
@@ -122,7 +125,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* MOBILE MENU (UNCHANGED) */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-[#1A1A1A] px-4 pt-4 pb-6 space-y-2">
           {mainLinks.map(({ label, href }) => (
@@ -137,7 +140,6 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* Mobile Resources */}
           <div>
             <button
               onClick={() => setIsResourcesOpen(prev => !prev)}
@@ -179,7 +181,6 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Mobile Contact Button */}
           <Link
             href="/contact-us"
             onClick={closeAllMenus}

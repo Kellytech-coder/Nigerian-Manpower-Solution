@@ -22,17 +22,23 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="bg-[#1A1A1A] fixed w-full z-30">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="flex justify-between items-center h-16 sm:h-20">
+    <header className="fixed top-0 w-full z-30 flex justify-center px-4">
+      <nav className="w-full max-w-7xl">
+        <div
+          className="flex justify-between items-center h-16 sm:h-20
+                     bg-gradient-to-r from-[#1a1a1a] to-[#222]
+                     px-6 sm:px-8 lg:px-10
+                     rounded-b-3xl
+                     shadow-[0_10px_25px_rgba(0,0,0,0.35)]
+                     border-x border-b border-white/10"
+        >
           {/* Logo */}
-          <Link href="/">
-            <h1
-              className="text-white text-2xl sm:text-3xl italic tracking-wide"
-              style={{ fontFamily: "Great Vibes, cursive" }}
-            >
-              Logo
-            </h1>
+          <Link href="/" className="flex items-center">
+            <img
+              src="/images/logo2.png"
+              alt="Nigeria Manpower Solution"
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -84,7 +90,7 @@ export default function Navbar() {
             {/* Desktop Contact Button */}
             <Link
               href="/contact-us"
-              className="bg-amber-500 hover:bg-[#e65d00] text-white px-5 py-2 rounded-md transition-colors"
+              className="bg-amber-500 hover:bg-[#e65d00] text-white px-5 py-2 rounded-full transition-colors"
             >
               Contact Us
             </Link>
@@ -96,11 +102,7 @@ export default function Navbar() {
             className="md:hidden text-white"
             aria-label="Open menu"
           >
-            <svg
-              className="w-6 h-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <circle cx="12" cy="5" r="2" />
               <circle cx="12" cy="12" r="2" />
               <circle cx="12" cy="19" r="2" />
@@ -120,7 +122,7 @@ export default function Navbar() {
             transition={{ duration: 0.35, ease: "easeInOut" }}
             className="fixed top-16 sm:top-20 left-0 w-full
                        bg-[#1A1A1A] px-5 py-6 space-y-3
-                       md:hidden z-40"
+                       md:hidden z-40 rounded-b-2xl"
           >
             {mainLinks.map(({ label, href }) => (
               <Link

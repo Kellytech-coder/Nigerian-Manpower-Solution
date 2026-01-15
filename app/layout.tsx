@@ -19,7 +19,11 @@ export const metadata: Metadata = {
   title: "Nigeria-Manpower-Solution",
   description:
     "Nigeria Manpower Solution provides reliable workforce recruitment, skilled labor outsourcing, and HR support services for businesses across Nigeria",
+  icons: {
+    icon: "favicon.ico",
+  },
 };
+
 
 export default function RootLayout({
   children,

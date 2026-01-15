@@ -11,6 +11,7 @@ export default function Navbar() {
     { label: "Home", href: "/landing-page" },
     { label: "Services", href: "/services" },
     { label: "Industries", href: "/industries" },
+    { label: "How It Work", href: "/how-it-work" },
     { label: "About", href: "/about" },
   ];
 
@@ -21,17 +22,24 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="bg-[#1A1A1A] fixed w-full z-30">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+    <header className="fixed w-full z-30">
+      <nav
+        className="
+          max-w-7xl mx-auto
+          px-4 sm:px-6 lg:px-10
+          bg-[#1A1A1A]
+          rounded-b-2xl
+          shadow-lg
+        "
+      >
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-            <h1
-              className="text-white text-2xl sm:text-3xl italic font-[400] tracking-wide"
-              style={{ fontFamily: "Great Vibes, cursive" }}
-            >
-              Logo
-            </h1>
+          <Link href="/" className="flex items-center">
+            <img
+              src="/images/logo2.png"
+              alt="Nigeria Manpower Solution"
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -118,52 +126,49 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#1A1A1A] px-4 sm:px-6 pt-4 pb-6 space-y-2">
-          {mainLinks.map(({ label, href }) => (
-            <Link
-              key={label}
-              href={href}
-              className="block text-white text-sm font-medium py-2 hover:text-gray-300 transition"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              {label}
-            </Link>
-          ))}
+        <div className="md:hidden bg-[#1A1A1A]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-4 pb-6 space-y-2">
+            {mainLinks.map(({ label, href }) => (
+              <Link
+                key={label}
+                href={href}
+                className="block text-white text-sm font-medium py-2 hover:text-gray-300 transition"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                {label}
+              </Link>
+            ))}
 
-          {/* Mobile Resources */}
-          <div>
-            <button
-              onClick={() => setIsResourcesOpen(!isResourcesOpen)}
-              className="w-full flex justify-between items-center text-white text-sm font-medium py-2 hover:text-gray-300"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              Resources
-             <svg
-  className="w-6 h-6"
-  fill="currentColor"
-  viewBox="0 0 24 24"
->
-  <circle cx="12" cy="5" r="2" />
-  <circle cx="12" cy="12" r="2" />
-  <circle cx="12" cy="19" r="2" />
-</svg>
+            {/* Mobile Resources */}
+            <div>
+              <button
+                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                className="w-full flex justify-between items-center text-white text-sm font-medium py-2 hover:text-gray-300"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                Resources
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="5" r="2" />
+                  <circle cx="12" cy="12" r="2" />
+                  <circle cx="12" cy="19" r="2" />
+                </svg>
+              </button>
 
-            </button>
-
-            {isResourcesOpen && (
-              <div className="pl-3 sm:pl-4 mt-2 space-y-1">
-                {resourcesLinks.map(({ label, href }) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    className="block text-white text-sm py-1 hover:text-gray-300"
-                    style={{ fontFamily: "Inter, sans-serif" }}
-                  >
-                    {label}
-                  </Link>
-                ))}
-              </div>
-            )}
+              {isResourcesOpen && (
+                <div className="pl-3 sm:pl-4 mt-2 space-y-1">
+                  {resourcesLinks.map(({ label, href }) => (
+                    <Link
+                      key={label}
+                      href={href}
+                      className="block text-white text-sm py-1 hover:text-gray-300"
+                      style={{ fontFamily: "Inter, sans-serif" }}
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}

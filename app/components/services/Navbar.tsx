@@ -22,17 +22,24 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="bg-[#1A1A1A] fixed w-full z-30">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+    <header className="fixed w-full z-30">
+      <nav
+        className="
+          max-w-7xl mx-auto
+          px-4 sm:px-6 lg:px-10
+          bg-[#1A1A1A]
+          rounded-b-2xl
+          shadow-lg
+        "
+      >
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
-          <Link href="/">
-            <h1
-              className="text-white text-2xl sm:text-3xl italic tracking-wide"
-              style={{ fontFamily: "Great Vibes, cursive" }}
-            >
-              Logo
-            </h1>
+          <Link href="/" className="flex items-center">
+            <img
+              src="/images/logo2.png"
+              alt="Nigeria Manpower Solution"
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -87,7 +94,7 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* ✅ Desktop Contact Button */}
+            {/* Desktop Contact Button */}
             <Link
               href="/contact-us"
               className="bg-amber-500 hover:bg-amber-600 text-white px-5 py-2 rounded-md transition-colors"
@@ -102,16 +109,11 @@ export default function Navbar() {
             className="md:hidden text-white"
             aria-label="Open menu"
           >
-            <svg
-  className="w-6 h-6"
-  fill="currentColor"
-  viewBox="0 0 24 24"
->
-  <circle cx="12" cy="5" r="2" />
-  <circle cx="12" cy="12" r="2" />
-  <circle cx="12" cy="19" r="2" />
-</svg>
-
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="5" r="2" />
+              <circle cx="12" cy="12" r="2" />
+              <circle cx="12" cy="19" r="2" />
+            </svg>
           </button>
         </div>
       </nav>
@@ -125,53 +127,53 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="fixed top-16 sm:top-20 left-0 w-full
-                       bg-[#1A1A1A] px-5 py-6 space-y-3
-                       md:hidden z-40"
+            className="fixed top-16 sm:top-20 left-0 w-full bg-[#1A1A1A] md:hidden z-40"
           >
-            {mainLinks.map(({ label, href }) => (
-              <Link
-                key={label}
-                href={href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-white py-2"
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-6 space-y-3">
+              {mainLinks.map(({ label, href }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-white py-2"
+                >
+                  {label}
+                </Link>
+              ))}
+
+              {/* Mobile Resources Dropdown */}
+              <button
+                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                className="w-full flex justify-between items-center text-white py-2"
               >
-                {label}
+                Resources
+                <span>{isResourcesOpen ? "−" : "+"}</span>
+              </button>
+
+              {isResourcesOpen && (
+                <div className="pl-4 space-y-1">
+                  {resourcesLinks.map(({ label, href }) => (
+                    <Link
+                      key={label}
+                      href={href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block text-gray-300 text-sm"
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+
+              {/* Mobile Contact Button */}
+              <Link
+                href="/contact-us"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block mt-4 bg-amber-500 text-white text-center py-2 rounded-md transition-colors hover:bg-[#e65d00]"
+              >
+                Contact Us
               </Link>
-            ))}
-
-            {/* Mobile Resources Dropdown */}
-            <button
-              onClick={() => setIsResourcesOpen(!isResourcesOpen)}
-              className="w-full flex justify-between items-center text-white py-2"
-            >
-              Resources
-              <span>{isResourcesOpen ? "−" : "+"}</span>
-            </button>
-
-            {isResourcesOpen && (
-              <div className="pl-4 space-y-1">
-                {resourcesLinks.map(({ label, href }) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-gray-300 text-sm"
-                  >
-                    {label}
-                  </Link>
-                ))}
-              </div>
-            )}
-
-            {/* ✅ Mobile Contact Button */}
-            <Link
-              href="/contact-us"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block mt-4 bg-amber-500 text-white text-center py-2 rounded-md transition-colors hover:bg-[#e65d00]"
-            >
-              Contact Us
-            </Link>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

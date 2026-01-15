@@ -27,14 +27,13 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
-          <Link href="/">
-            <h1
-              className="text-white text-2xl sm:text-3xl italic tracking-wide"
-              style={{ fontFamily: "Great Vibes, cursive" }}
-            >
-              Logo
-            </h1>
-          </Link>
+          <Link href="/" className="flex items-center">
+  <img
+    src="/images/logo2.png"
+    alt="Nigeria Manpower Solution"
+    className="h-8 w-auto"
+  />
+</Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8 ml-auto">
@@ -89,7 +88,7 @@ export default function Navbar() {
             </div>
 
             <Link
-              href="/contact"
+              href="/contact-us"
               className="bg-amber-500 hover:bg-[#e65d00] text-white px-5 py-2 rounded-md"
             >
               Contact Us
