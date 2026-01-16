@@ -2,83 +2,108 @@
 import React, { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
 
+/* =========================
+   DATA
+========================= */
 const industries = [
   {
+    id: "construction-engineering",
     title: "Construction & Engineering",
-    description: "Skilled and unskilled labor supply for construction sites, infrastructure projects, and engineering operations.",
+    description:
+      "Skilled and unskilled labor supply for construction sites, infrastructure projects, and engineering operations.",
     image: "/images/sector1.png",
   },
   {
+    id: "manufacturing-production",
     title: "Manufacturing & Production",
-    description: "Factory workers, machine operators, quality control staff, and operational supervisors.",
+    description:
+      "Factory workers, machine operators, quality control staff, and operational supervisors.",
     image: "/images/industrycategory1.png",
   },
   {
+    id: "oil-gas-energy",
     title: "Oil & Gas / Energy",
-    description: "Technical manpower, field operators, safety officers, and project support staff.",
+    description:
+      "Technical manpower, field operators, safety officers, and project support staff.",
     image: "/images/industrycategory2.png",
   },
   {
+    id: "logistics-transportation-warehousing",
     title: "Logistics, Transportation & Warehousing",
-    description: "Loaders, inventory officers, forklift operators, dispatch staff, and warehouse managers.",
+    description:
+      "Loaders, inventory officers, forklift operators, dispatch staff, and warehouse managers.",
     image: "/images/industrycategory3.png",
   },
   {
+    id: "technology-it-services",
     title: "Technology & IT Services",
-    description: "IT support staff, technical assistants, helpdesk agents, and system operations support.",
+    description:
+      "IT support staff, technical assistants, helpdesk agents, and system operations support.",
     image: "/images/industrycategory4.png",
   },
   {
+    id: "hospitality-events",
     title: "Hospitality & Events",
-    description: "Hotel staff, cleaners, cooks, waiters, event ushers, and facility support personnel.",
+    description:
+      "Hotel staff, cleaners, cooks, waiters, event ushers, and facility support personnel.",
     image: "/images/industrycategory5.png",
   },
   {
+    id: "banking-finance-corporate",
     title: "Banking, Finance & Corporate Office",
-    description: "Administrative assistants, receptionists, customer service reps, and office support personnel.",
+    description:
+      "Administrative assistants, receptionists, customer service reps, and office support personnel.",
     image: "/images/industrycategory6.png",
   },
   {
+    id: "agriculture-food-processing",
     title: "Agriculture & Food Processing",
-    description: "Farm assistants, production workers, quality inspectors, sorting and packaging teams.",
+    description:
+      "Farm assistants, production workers, quality inspectors, sorting and packaging teams.",
     image: "/images/industrycategory7.png",
   },
   {
+    id: "retail-ecommerce",
     title: "Retail & E-Commerce",
-    description: "Sales attendants, merchandisers, packers, delivery assistants, and customer support teams.",
+    description:
+      "Sales attendants, merchandisers, packers, delivery assistants, and customer support teams.",
     image: "/images/industrycategory8.png",
   },
   {
+    id: "safety-security",
     title: "Safety & Security",
-    description: "Security personnel, safety officers, access control staff, and surveillance support teams.",
+    description:
+      "Security personnel, safety officers, access control staff, and surveillance support teams.",
     image: "/images/industrycategory10.png",
   },
   {
+    id: "healthcare-medical-support",
     title: "Healthcare & Medical Support",
-    description: "Nurses, assistants, cleaners, patient support staff, and facility maintenance teams.",
+    description:
+      "Nurses, assistants, cleaners, patient support staff, and facility maintenance teams.",
     image: "/images/industrycategory11.png",
   },
   {
+    id: "customer-support-bpo",
     title: "Customer Support / BPO",
-    description: "Call center agents, telemarketers, helpdesk teams, and onboarding support staff.",
+    description:
+      "Call center agents, telemarketers, helpdesk teams, and onboarding support staff.",
     image: "/images/industrycategory9.png",
   },
 ];
 
-
+/* =========================
+   COMPONENT
+========================= */
 const IndustryCategories = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [cardsPerView, setCardsPerView] = useState(1);
 
+  /* Responsive cards per view */
   useEffect(() => {
-    // Update cards per view based on screen width
     const updateCardsPerView = () => {
-      if (window.innerWidth >= 768) { // md breakpoint
-        setCardsPerView(3);
-      } else {
-        setCardsPerView(1);
-      }
+      setCardsPerView(window.innerWidth >= 768 ? 3 : 1);
     };
 
     updateCardsPerView();
@@ -114,7 +139,9 @@ const IndustryCategories = () => {
             Our Industrial Coverage
           </h2>
           <p className="text-gray-400 text-lg">
-            We partner with organizations across multiple sectors, delivering manpower solutions that align with their operational needs and industry standards.
+            We partner with organizations across multiple sectors, delivering
+            manpower solutions that align with their operational needs and
+            industry standards.
           </p>
         </div>
 
@@ -129,9 +156,10 @@ const IndustryCategories = () => {
       {/* Carousel */}
       <div className="relative">
         <div className="grid gap-6 md:grid-cols-3">
-          {visibleIndustries.map((industry, index) => (
+          {visibleIndustries.map((industry) => (
             <div
-              key={index}
+              key={industry.id}
+              id={industry.id}
               className="relative h-[480px] group overflow-hidden rounded-sm cursor-pointer"
             >
               <div
@@ -143,7 +171,9 @@ const IndustryCategories = () => {
 
               <div className="absolute inset-0 flex flex-col justify-end p-8">
                 <h3 className="text-2xl font-bold mb-4">{industry.title}</h3>
-                <p className="text-gray-300 text-sm mb-6">{industry.description}</p>
+                <p className="text-gray-300 text-sm mb-6">
+                  {industry.description}
+                </p>
                 <button className="flex items-center text-sm font-semibold">
                   See full details
                   <ArrowRight className="ml-1 w-4 h-4" />
@@ -153,7 +183,7 @@ const IndustryCategories = () => {
           ))}
         </div>
 
-        {/* Arrows (only on mobile or when carousel is active) */}
+        {/* Mobile Arrows */}
         {cardsPerView === 1 && (
           <>
             <button
@@ -172,7 +202,7 @@ const IndustryCategories = () => {
         )}
       </div>
 
-      {/* Modal for "View All" */}
+      {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/80 flex justify-center items-start overflow-auto py-20 px-4">
           <div className="bg-[#050B1C] w-full max-w-6xl p-6 rounded-lg relative">
@@ -183,12 +213,15 @@ const IndustryCategories = () => {
               <X size={24} />
             </button>
 
-            <h2 className="text-3xl font-bold mb-6 text-white">All Industry Categories</h2>
+            <h2 className="text-3xl font-bold mb-6 text-white">
+              All Industry Categories
+            </h2>
 
             <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-              {industries.map((industry, index) => (
+              {industries.map((industry) => (
                 <div
-                  key={index}
+                  key={industry.id}
+                  id={industry.id}
                   className="relative h-[480px] group overflow-hidden rounded-sm cursor-pointer"
                 >
                   <div
@@ -199,8 +232,12 @@ const IndustryCategories = () => {
                   </div>
 
                   <div className="absolute inset-0 flex flex-col justify-end p-8">
-                    <h3 className="text-2xl font-bold mb-4">{industry.title}</h3>
-                    <p className="text-gray-300 text-sm mb-6">{industry.description}</p>
+                    <h3 className="text-2xl font-bold mb-4">
+                      {industry.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-6">
+                      {industry.description}
+                    </p>
                     <button className="flex items-center text-sm font-semibold">
                       See full details
                       <ArrowRight className="ml-1 w-4 h-4" />

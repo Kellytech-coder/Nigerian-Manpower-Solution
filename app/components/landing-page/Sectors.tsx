@@ -1,27 +1,31 @@
 // app/components/landing-page/Sectors.tsx
-import Image from 'next/image';
-import Container from './Container';
-import FadeInWrapper from './FadeInOnScroll';
+import Image from "next/image";
+import Link from "next/link";
+import Container from "./Container";
+import FadeInWrapper from "./FadeInOnScroll";
 
 export default function Sectors() {
   const sectors = [
     {
-      category: 'Construction',
-      title: 'Heavy-duty workforce for infrastructure development',
-      description: 'Skilled technicians and project-specific personnel',
-      image: '/images/sector1.png',
+      category: "Construction",
+      title: "Heavy-duty workforce for infrastructure development",
+      description: "Skilled technicians and project-specific personnel",
+      image: "/images/sector1.png",
+      link: "/industries#construction-engineering",
     },
     {
-      category: 'Oil & gas',
-      title: 'Technical expertise for energy sector challenges',
-      description: 'Specialized professionals meeting rigorous industry standards',
-      image: '/images/sector2.png',
+      category: "Oil & gas",
+      title: "Technical expertise for energy sector challenges",
+      description: "Specialized professionals meeting rigorous industry standards",
+      image: "/images/sector2.png",
+      link: "/industries#oil-gas-energy",
     },
     {
-      category: 'Manufacturing',
-      title: 'Precision workforce for industrial production',
-      description: 'Skilled operators ensuring operational excellence and efficiency',
-      image: '/images/sector3.png',
+      category: "Manufacturing",
+      title: "Precision workforce for industrial production",
+      description: "Skilled operators ensuring operational excellence and efficiency",
+      image: "/images/sector3.png",
+      link: "/industries#manufacturing-production",
     },
   ];
 
@@ -48,7 +52,7 @@ export default function Sectors() {
               key={idx}
               className="relative overflow-hidden rounded-2xl sm:rounded-3xl group cursor-pointer h-[420px] sm:h-[480px] lg:h-[550px]"
             >
-              {/* Background Image with Overlay */}
+              {/* Background Image */}
               <div className="absolute inset-0">
                 <Image
                   src={sector.image}
@@ -57,8 +61,7 @@ export default function Sectors() {
                   unoptimized
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
               </div>
 
               {/* Content */}
@@ -66,21 +69,23 @@ export default function Sectors() {
                 <span className="text-xs sm:text-sm font-bold text-white/90 uppercase tracking-wider">
                   {sector.category}
                 </span>
-                <h3 className="mt-1 sm:mt-2 text-xl sm:text-2xl lg:text-3xl font-black text-white leading-snug sm:leading-tight">
+
+                <h3 className="mt-1 sm:mt-2 text-xl sm:text-2xl lg:text-3xl font-black text-white leading-snug">
                   {sector.title}
                 </h3>
-                <p className="mt-2 text-sm sm:text-base lg:text-base text-white/80 leading-relaxed">
+
+                <p className="mt-2 text-sm sm:text-base text-white/80 leading-relaxed">
                   {sector.description}
                 </p>
 
                 {/* Explore Link */}
-                <a
-                  href="#"
+                <Link
+                  href={sector.link}
                   className="mt-4 sm:mt-6 inline-flex items-center gap-1 sm:gap-2 text-white font-semibold hover:gap-3 transition-all duration-300 text-sm sm:text-base"
                 >
                   Explore
                   <span className="text-base sm:text-lg">→</span>
-                </a>
+                </Link>
               </div>
             </FadeInWrapper>
           ))}
