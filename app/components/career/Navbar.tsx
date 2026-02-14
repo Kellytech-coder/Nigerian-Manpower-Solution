@@ -20,7 +20,6 @@ export default function Navbar() {
   const resourcesLinks = [
     { label: "Case Studies", href: "/case-studies" },
     { label: "Work Force", href: "/work-force" },
-    { label: "Careers", href: "/careers" },
   ];
 
   return (
