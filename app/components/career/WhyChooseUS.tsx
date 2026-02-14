@@ -69,7 +69,7 @@ export default function WhyCompaniesChooseUs() {
               className="rounded-2xl bg-[#0B1F3A] p-8 text-left"
             >
               {/* Icon */}
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-500">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-amber-500">
                 <service.icon className="h-6 w-6 text-white" />
               </div>
 
@@ -87,7 +87,7 @@ export default function WhyCompaniesChooseUs() {
               {service.link && (
                 <a
                   href={service.link}
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white hover:text-orange-400"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white hover:text-amber-400"
                 >
                   {service.linkLabel}
                   <ArrowRightIcon className="h-4 w-4" />
@@ -101,7 +101,7 @@ export default function WhyCompaniesChooseUs() {
         <div className="mt-16">
           <a
             href="/work-with-us"
-            className="inline-flex items-center gap-2 rounded-md bg-orange-500 px-6 py-3 font-semibold text-white hover:bg-orange-600 transition"
+            className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3 font-semibold text-white hover:bg-amber-600 transition"
           >
             Work With Us
             <ArrowRightIcon className="h-4 w-4" />
