@@ -48,7 +48,7 @@ export default function Services() {
             {/* Text Left Half */}
             <div className="w-full lg:w-1/2 p-6 md:p-8 lg:p-12 flex flex-col justify-between order-2 lg:order-1">
               <div>
-                <span className="text-xs md:text-sm font-bold text-amber-600 uppercase tracking-wider">
+                <span className="text-xs md:text-sm font-bold text-amber-500 uppercase tracking-wider">
                   {services[0].category}
                 </span>
                 <h3 className="mt-3 md:mt-4 text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 leading-tight">
@@ -98,7 +98,7 @@ export default function Services() {
                 
                 <a
                   href="#"
-                  className="mt-6 md:mt-8 inline-flex items-center gap-2 text-sm md:text-base text-amber-600 font-semibold hover:gap-4 transition-all duration-300"
+                  className="mt-6 md:mt-8 inline-flex items-center gap-2 text-sm md:text-base text-amber-500 font-semibold hover:gap-4 transition-all duration-300"
                 >
                   Explore →
                 </a>

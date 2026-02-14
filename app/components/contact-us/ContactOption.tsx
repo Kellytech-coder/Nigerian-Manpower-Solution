@@ -22,8 +22,8 @@ const ContactPageSections = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* General Enquiries */}
           <div className="flex flex-col items-center">
-            <div className="w-12 h-12 rounded-full border border-orange-500 flex items-center justify-center mb-6">
-              <Phone className="text-orange-500 w-5 h-5" />
+            <div className="w-12 h-12 rounded-full border border-amber-500 flex items-center justify-center mb-6">
+              <Phone className="text-amber-500 w-5 h-5" />
             </div>
             <h3 className="text-xl font-bold mb-4">General Enquiries</h3>
             <p className="text-sm text-gray-400 mb-1">
@@ -40,8 +40,8 @@ const ContactPageSections = () => {
 
           {/* Manpower Support */}
           <div className="flex flex-col items-center">
-            <div className="w-12 h-12 rounded-full border border-orange-500 flex items-center justify-center mb-6">
-              <Users className="text-orange-500 w-5 h-5" />
+            <div className="w-12 h-12 rounded-full border border-amber-500 flex items-center justify-center mb-6">
+              <Users className="text-amber-500 w-5 h-5" />
             </div>
             <h3 className="text-xl font-bold mb-4">Request Manpower Support</h3>
             <p className="text-sm text-gray-400 mb-1">
@@ -59,8 +59,8 @@ const ContactPageSections = () => {
 
           {/* Partnerships */}
           <div className="flex flex-col items-center">
-            <div className="w-12 h-12 rounded-full border border-orange-500 flex items-center justify-center mb-6">
-              <Mail className="text-orange-500 w-5 h-5" />
+            <div className="w-12 h-12 rounded-full border border-amber-500 flex items-center justify-center mb-6">
+              <Mail className="text-amber-500 w-5 h-5" />
             </div>
             <h3 className="text-xl font-bold mb-4">Partnership & Corporate Clients</h3>
             <p className="text-sm text-gray-400 mb-1">
@@ -93,7 +93,7 @@ const ContactPageSections = () => {
     required
     className="w-full border-b border-black py-3 bg-transparent
                text-gray-700 placeholder-gray-400
-               outline-none focus:border-orange-500 focus:text-gray-900"
+               outline-none focus:border-amber-500 focus:text-gray-900"
   />
 
   {/* Email & Phone */}
@@ -104,7 +104,7 @@ const ContactPageSections = () => {
       required
       className="border-b border-black py-3 bg-transparent
                  text-gray-700 placeholder-gray-400
-                 outline-none focus:border-orange-500 focus:text-gray-900"
+                 outline-none focus:border-amber-500 focus:text-gray-900"
     />
 
     <input
@@ -112,7 +112,7 @@ const ContactPageSections = () => {
       placeholder="Phone Number"
       className="border-b border-black py-3 bg-transparent
                  text-gray-700 placeholder-gray-400
-                 outline-none focus:border-orange-500 focus:text-gray-900"
+                 outline-none focus:border-amber-500 focus:text-gray-900"
     />
   </div>
 
@@ -122,7 +122,7 @@ const ContactPageSections = () => {
     placeholder="Company / Organization Name"
     className="w-full border-b border-black py-3 bg-transparent
                text-gray-700 placeholder-gray-400
-               outline-none focus:border-orange-500 focus:text-gray-900"
+               outline-none focus:border-amber-500 focus:text-gray-900"
   />
 
             {/* Reason */}
@@ -150,7 +150,7 @@ const ContactPageSections = () => {
   required
   className="w-full border-b border-black py-3 bg-transparent
              text-gray-700 placeholder-gray-400
-             outline-none focus:border-orange-500 focus:text-gray-900"
+             outline-none focus:border-amber-500 focus:text-gray-900"
 />
 {/* Agreement */}
 <div className="flex items-start gap-3 text-sm text-gray-700">
@@ -158,20 +158,20 @@ const ContactPageSections = () => {
     type="checkbox"
     checked={agreed}
     onChange={(e) => setAgreed(e.target.checked)}
-    className="accent-orange-500 mt-1"
+    className="accent-amber-500 mt-1"
   />
   <span className="leading-relaxed">
     I agree to the{" "}
     <a
       href="/privacy-policy"
-      className="underline text-gray-900 hover:text-orange-500 transition-colors"
+      className="underline text-gray-900 hover:text-amber-500 transition-colors"
     >
       Privacy Policy
     </a>{" "}
     and{" "}
     <a
       href="/terms-of-service"
-      className="underline text-gray-900 hover:text-orange-500 transition-colors"
+      className="underline text-gray-900 hover:text-amber-500 transition-colors"
     >
       Terms of Service
     </a>.
@@ -185,7 +185,7 @@ const ContactPageSections = () => {
               disabled={!agreed}
               className={`px-10 py-3 rounded-md font-bold text-sm transition-colors ${
                 agreed
-                  ? "bg-[#ff6f00] text-white hover:bg-[#e65100]"
+                  ? "bg-amber-500 text-white hover:bg-amber-600"
                   : "bg-gray-300 text-gray-500 cursor-not-allowed"
               }`}
             >

@@ -10,32 +10,31 @@ export default function Navbar() {
   const [isMobileResourcesOpen, setIsMobileResourcesOpen] = useState(false);
 
   const mainLinks = [
+    { label: "Home", href: "/landing-page" },
     { label: "Services", href: "/services" },
-    { label: "Industries", href: "/industries" },
     { label: "About", href: "/about" },
+    { label: "Industries", href: "/industries" },
     { label: "How It Works", href: "/how-it-work" },
   ];
 
   const resourcesLinks = [
     { label: "Case Studies", href: "/case-studies" },
     { label: "Work Force", href: "/work-force" },
-    { label: "Careers", href: "/career" },
+    { label: "Careers", href: "/careers" },
   ];
 
   return (
     <header className="fixed w-full z-50">
       <nav className="max-w-7xl mx-auto px-4">
         <div className="bg-[#1a1a1a] rounded-b-2xl px-6 lg:px-10 h-16 flex items-center justify-between shadow-lg">
-          
-         {/* Logo */}
-<Link href="/" className="flex items-center">
-  <img
-    src="/images/logo2.png"
-    alt="Nigeria Manpower Solution"
-    className="h-8 w-auto"
-  />
-</Link>
-
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <img
+              src="/images/logo2.png"
+              alt="Nigeria Manpower Solution"
+              className="h-8 w-auto"
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -99,20 +98,13 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Desktop Actions */}
+          {/* Desktop Primary Action: Contact */}
           <div className="hidden md:flex items-center gap-5">
             <Link
               href="/contact-us"
-              className="text-white/90 hover:text-white transition"
-            >
-              Contact Us
-            </Link>
-
-            <Link
-              href="/request-manpower"
               className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-full font-medium transition"
             >
-              Request
+              Contact Us
             </Link>
           </div>
 
@@ -122,16 +114,11 @@ export default function Navbar() {
             className="md:hidden text-white"
             aria-label="Toggle Menu"
           >
-            <svg
-  className="w-6 h-6"
-  fill="currentColor"
-  viewBox="0 0 24 24"
->
-  <circle cx="12" cy="5" r="2" />
-  <circle cx="12" cy="12" r="2" />
-  <circle cx="12" cy="19" r="2" />
-</svg>
-
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="5" r="2" />
+              <circle cx="12" cy="12" r="2" />
+              <circle cx="12" cy="19" r="2" />
+            </svg>
           </button>
         </div>
       </nav>
@@ -194,21 +181,15 @@ export default function Navbar() {
               )}
             </AnimatePresence>
 
-            <Link
-              href="/contact-us"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-white/90 py-2"
-            >
-              Contact
-            </Link>
+            {/* Mobile Primary Action: Contact */}
+           <Link
+  href="/contact-us"
+  onClick={() => setIsMobileMenuOpen(false)}
+  className="block mt-3 bg-amber-500 text-center text-white py-2 rounded-full font-medium transition"
+>
+  Contact Us
+</Link>
 
-            <Link
-              href="/request-manpower"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block mt-3 bg-amber-500 hover:bg-amber-600 text-center text-white py-2 rounded-full"
-            >
-              Request
-            </Link>
           </motion.div>
         )}
       </AnimatePresence>
